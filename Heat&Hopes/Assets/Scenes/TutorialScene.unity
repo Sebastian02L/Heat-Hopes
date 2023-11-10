@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  upLimit: 6
-  downLimit: -11
+  upLimit: 8
+  downLimit: -2
   direction: 1
 --- !u!61 &276265165
 BoxCollider2D:
