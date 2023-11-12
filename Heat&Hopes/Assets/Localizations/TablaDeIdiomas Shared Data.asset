@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TablaDeIdiomas Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: TablaDeIdiomas
+  m_TableCollectionNameGuidString: f42bc4fb045919443ad7f2014b81c467
+  m_Entries:
+  - m_Id: 49620729856
+    m_Key: Dislexia_DistanciaEntreLetras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205233602560
+    m_Key: Dislexia_DistanciaEntreLineas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404681146368
+    m_Key: Dislexia_Explicacion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1028118298624
+    m_Key: Dislexia_TextoEjemplo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1250819063808
+    m_Key: Dislexia_Boton
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 258376726456565784
+  references:
+    version: 2
+    RefIds:
+    - rid: 258376726456565784
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1699817128146

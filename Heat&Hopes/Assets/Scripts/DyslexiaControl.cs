@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
+
+
 
 //Clase encargada de permitir la configuracion de la fuente por parte del usuario
 public class DyslexiaControl : MonoBehaviour
