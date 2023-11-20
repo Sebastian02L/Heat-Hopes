@@ -23,12 +23,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 205233602560
-    m_Localized: Distance between words
+    m_Localized: Distance between lines
     m_Metadata:
       m_Items: []
   - m_Id: 404681146368
-    m_Localized: "Every option has 5 modes\nstarting with the lowest one \n(0) and
-      ending at the hightest one (5)"
+    m_Localized: "The first 2 options has 5 modes\nstarting with the lowest one \n(0)
+      and ending at the hightest one (5)\n\nUse the buttons of the third option\nto
+      change the size of the game font."
     m_Metadata:
       m_Items: []
   - m_Id: 1250819063808
@@ -36,14 +37,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1028118298624
-    m_Localized: 'Test text
+    m_Localized: 'Hi, I''m a example text
 
-      Test paragraph
+      you can modify me
 
-      Hi good afternoon
+      with the
+      options on the
 
-      My
-      name is Miguel Angel'
+      left side of the screen.
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 2809303385464832

@@ -27,17 +27,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 404681146368
-    m_Localized: "Cada ajuste tiene 5 modos\nempezando desde el m\xE1s bajo \n(0)
-      hasta el m\xE1s alto (5)"
+    m_Localized: "Los dos primeros ajustes tienen 5 modos \nempezando desde el m\xE1s
+      bajo \n(0) hasta el m\xE1s alto (5).\n\nUtiliza los botones del tercer ajuste\npara
+      cambiar el tama\xF1o de la fuente\ndel juego."
     m_Metadata:
       m_Items: []
   - m_Id: 1028118298624
-    m_Localized: "Texto de Pruebas\nP\xE1rrafo de Prueba\nHola Buenas Tardes\nMe
-      llamo Miguel Angel"
+    m_Localized: 'Hola, soy un texto de
+
+      ejemplo, puedes modificarme
+
+      con
+      las opciones que se encuentran
+
+      en la parte de la izquierda de la pantalla.'
     m_Metadata:
       m_Items: []
   - m_Id: 1250819063808
-    m_Localized: "\xBFAceptar cambios?"
+    m_Localized: "\xBFAceptar Cambios?"
     m_Metadata:
       m_Items: []
   - m_Id: 2809303385464832

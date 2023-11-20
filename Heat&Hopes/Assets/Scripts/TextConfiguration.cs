@@ -9,7 +9,6 @@ public class TextConfiguration : MonoBehaviour
 {
     //Variables de la clase
     private float characterSpacing;         
-    private float fontSize;
     private float lineSpacing;
     private TextMeshProUGUI text;
 
@@ -29,11 +28,11 @@ public class TextConfiguration : MonoBehaviour
         GameObject.Find("Canvas").GetComponent<DyslexiaControl>().addToList(this);
     }
 
-    public void updateText(float character, float fontSize, float line)
+    public void updateText(float character, float fontSizeChange, float line)
     {
         //Actualizamos los atributos del texto con los parametros recibidos
         text.characterSpacing = character;
-        text.fontSize = text.fontSize + fontSize;
+        text.fontSize += fontSizeChange;
         text.lineSpacing = line;
     }
 
