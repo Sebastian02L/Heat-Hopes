@@ -14,6 +14,7 @@ public class DyslexiaControl : MonoBehaviour
 
     //variable que almacena el texto de ejemplo del menu
     private TextMeshProUGUI text;
+    float fontSize;
 
     //Lista con todos los textos del juego
     private List<TextConfiguration> textList = new List<TextConfiguration>();   
@@ -51,30 +52,16 @@ public class DyslexiaControl : MonoBehaviour
         }
     }
 
-    //En funcion del valor recibido por el Slider, se seleccionara un modo de distancia entre palabras
-    public void changeWordDistance(float sliderFloat)
+    //En funcion del valor recibido por el Slider, se seleccionara un modo de tamaño de letra. FALTA ARREGLARLO
+    public void changeFontSize(float sliderFloat)
     {
-        switch (sliderFloat)
+        if(sliderFloat < fontSize)
         {
-            case 0:
-                text.wordSpacing = sliderFloat;
-                break;
-            case 1:
-                text.wordSpacing = sliderFloat + 2;
-                break;
-            case 2:
-                text.wordSpacing = sliderFloat + 4;
-                break;
-            case 3:
-                text.wordSpacing = sliderFloat + 6;
-                break;
-            case 4:
-                text.wordSpacing = sliderFloat + 6;
-                break;
-            case 5:
-                text.wordSpacing = sliderFloat + 7;
-                break;
+            fontSize = sliderFloat - fontSize;
         }
+        fontSize = sliderFloat;
+
+        text.fontSize = text.fontSize + fontSize;
     }
 
     //En funcion del valor recibido por el Slider, se seleccionara un modo de distancia entre lineas
@@ -113,7 +100,7 @@ public class DyslexiaControl : MonoBehaviour
     {
         foreach(TextConfiguration textConfiguration in textList)
         {
-            textConfiguration.updateText(text.characterSpacing, text.wordSpacing, text.lineSpacing);
+            textConfiguration.updateText(text.characterSpacing, fontSize, text.lineSpacing);
         }
     }
 }

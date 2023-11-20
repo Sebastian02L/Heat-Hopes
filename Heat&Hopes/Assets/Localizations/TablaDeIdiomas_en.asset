@@ -27,8 +27,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 404681146368
-    m_Localized: Every option has 5 modes, starting with the lowest one (0) and ending
-      at the hightest one (5)
+    m_Localized: "Every option has 5 modes\nstarting with the lowest one \n(0) and
+      ending at the hightest one (5)"
     m_Metadata:
       m_Items: []
   - m_Id: 1250819063808
@@ -44,6 +44,30 @@ MonoBehaviour:
 
       My
       name is Miguel Angel'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2809303385464832
+    m_Localized: Spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2809369210871808
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2812635369922560
+    m_Localized: Font size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2823134639775744
+    m_Localized: Font options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2823327368044544
+    m_Localized: Example Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2823448499544064
+    m_Localized: Language selection
     m_Metadata:
       m_Items: []
   references:

@@ -35,6 +35,30 @@ MonoBehaviour:
     m_Key: Dislexia_Boton
     m_Metadata:
       m_Items: []
+  - m_Id: 2809303385464832
+    m_Key: "Idioma_Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2809369210871808
+    m_Key: Idioma_Ingles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2812635369922560
+    m_Key: "Dislexia_Tama\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2823134639775744
+    m_Key: Dislexia_Titulo_Fuente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2823327368044544
+    m_Key: Dislexia_Titulo_Ejemplo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2823448499544064
+    m_Key: Dilesxia_Titulo_Idioma
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
