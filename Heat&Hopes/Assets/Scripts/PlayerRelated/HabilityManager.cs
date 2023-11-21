@@ -15,5 +15,7 @@ public class HabilityManager : MonoBehaviour
     public void changeEnergy(int quantity)
     {
         energy += quantity;
+        energy = Mathf.Clamp(energy, 0, int.MaxValue);
+
     }
 }
