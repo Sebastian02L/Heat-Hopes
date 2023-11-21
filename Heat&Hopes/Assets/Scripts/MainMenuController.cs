@@ -12,7 +12,7 @@ public class MainMenuController : MonoBehaviour
         {
             case 0:
                 //Cargar escena de juego
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("TutorialScene");
                 break;
             case 1:
                 //Cargar escena de ajustes
