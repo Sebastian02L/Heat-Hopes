@@ -10,18 +10,19 @@ public class Behaviour : MonoBehaviour
     public int rutine;
 
     //Atributos para controlar el movimiento:
-    public float speed;
+    public float speedWalk;
+    public float speedRun;
     public bool isRight;
     public float timerMovement;
     public float ChangeDirTime = 8f;
 
-    //Atributos para perseguir y atacar al jugador:
+    //Atributos para perseguir al jugador;
     public GameObject target;
-    public GameObject range;
-    public GameObject hit;
+    public float visionRange=5f;
+    public float attackRange=2f;
+
+    //Atributos para atacar al jugador:
     public bool attacking;
-    public float visionRange;
-    public float attackRange;
     
 
     void Start()
@@ -35,34 +36,20 @@ public class Behaviour : MonoBehaviour
         Behaviours();
     }
 
-    public void Attack() {
-        attacking = false;
-        range.GetComponent<BoxCollider2D>().enabled = true;
-    }
-
-    public void ColliderAttackTrue() { 
-        hit.GetComponent<BoxCollider2D>().enabled = true;  
-    }
-
-    public void ColliderAttackFalse()
-    {
-        hit.GetComponent<BoxCollider2D>().enabled = false;
-    }
-
 
     public void Behaviours()
     {
-        if (Mathf.Abs(transform.position.x - target.transform.position.x) > visionRange && !attacking)
-        { //Si no ve al jugador ni se encuentra atacando.
+        if (Mathf.Abs(transform.position.x - target.transform.position.x) > visionRange)
+        { //Si no ve al jugador.
 
             //Movimiento del enemigo.
             if (isRight == true)
             {
-                transform.position += Vector3.right * speed * Time.deltaTime;
+                transform.position += Vector3.right * speedWalk * Time.deltaTime;
             }
             else
             {
-                transform.position += Vector3.left * speed * Time.deltaTime;
+                transform.position += Vector3.left * speedWalk * Time.deltaTime;
             }
 
             timerMovement -= Time.deltaTime;
@@ -74,21 +61,24 @@ public class Behaviour : MonoBehaviour
         }
 
         else {
-            if (Mathf.Abs(transform.position.x - target.transform.position.x) > attackRange && !attacking)
-            { //Si ha visto al jugador pero no esta en rango de ataque
+            if (Mathf.Abs(transform.position.x - target.transform.position.x) > attackRange)
+            { //Si ha visto al jugador pero no esta en rango de ataque entonces se debe acercar
 
                 if (transform.position.x < target.transform.position.x)
                 { //El jugador se encuentra a la derecha
-                    transform.Translate(Vector3.right * speed * Time.deltaTime);
+                    transform.Translate(Vector3.right * speedRun * Time.deltaTime);
+                    
                 }
                 else
                 {//El jugador se encuentra a la izquierda
-                    transform.Translate(Vector3.left * speed * Time.deltaTime);
+                    transform.Translate(Vector3.left * speedRun * Time.deltaTime);
+                    
                 }
             }
 
             else { //Si se encuentra dentro del rango de ataque
-               
+                
+               GetComponent<EnemyAttack>();
             }
 
         }
