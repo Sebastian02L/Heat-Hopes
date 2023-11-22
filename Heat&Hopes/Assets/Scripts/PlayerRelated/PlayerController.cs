@@ -4,60 +4,55 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float t; //Temporizador para aplicar el salto una sola vez
     private Rigidbody2D rb; //Referencia al componente Rigidbody
-    public bool grounded; //parametro que dice si el personaje esta en el suelo
+    public bool grounded; //Parametro que dice si el personaje esta en el suelo
     [Header("Atributos")]
     public float speed;
     public float jumpForce;
-    public Vector3 groundedPoint; //La posición (respecto al centro del personaje) desde la que se comprueba si el personaje está en el suelo
+    private bool jump = false; //Bool que indica si el personaje salta o no
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); //Consegimos la referencia
+        rb = GetComponent<Rigidbody2D>(); //Conseguimos la referencia
     }
     void FixedUpdate()
     {
-        if (t < 0.1f) //Incremento de temporizador;
-        {
-            t += Time.deltaTime;
-        }
-        grounded = CheckGround();
-        if (Input.anyKey)
-        {
-            MovementInput();
-        }
-        else
-        {
-            rb.velocity=new Vector2 (0,rb.velocity.y);
-        }
+        MovementInput();
+    }
+
+    private void Update()
+    {
+        JumpInput();
     }
 
     private void MovementInput() //Esta funcion maneja el movimiento dependiendo de la tecla pulsada
     {
         //movimiento derecha
-        if(Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y); //Se cambia la velocidad
+            rb.velocity = new Vector2(speed, rb.velocity.y);
         }
         //movimiento izquierda
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            rb.velocity = new Vector2(-speed, rb.velocity.y); //Se cambia la velocidad
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
         //salto
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))&&grounded&&t>=0.1f)
+        if (jump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Se aplica un impulso hacia arriba
-            t = 0;
+            jump = false;
         }
     }
 
-    private bool CheckGround()
+    private void JumpInput() //El input del jump requiere un getKeyDown, por lo que debe de ser registrado en Update y no FixedUpdate
     {
-        return (Physics2D.Raycast(transform.position+groundedPoint, Vector2.down, 0.01f).collider != null);
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && grounded)
+        {
+            jump = true;
+        }
     }
 }

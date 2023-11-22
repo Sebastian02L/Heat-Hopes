@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 556761988}
   m_Layer: 0
   m_Name: Step 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1042,7 +1042,7 @@ Transform:
   m_Children:
   - {fileID: 1646094820}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648983645
 GameObject:
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 648983647}
   m_Layer: 0
   m_Name: SmallGround 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 674832758}
   m_Layer: 0
   m_Name: SmallGround 4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1315,7 @@ GameObject:
   - component: {fileID: 769334643}
   m_Layer: 0
   m_Name: Stairs1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1350,7 +1350,7 @@ GameObject:
   - component: {fileID: 809547078}
   m_Layer: 0
   m_Name: Ground 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 906739234}
   m_Layer: 0
   m_Name: SmallGround 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1994,7 +1994,7 @@ GameObject:
   - component: {fileID: 1048851469}
   m_Layer: 0
   m_Name: Ground 5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2124,7 +2124,7 @@ GameObject:
   - component: {fileID: 1076934009}
   m_Layer: 0
   m_Name: Ground 4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 1309564196}
   m_Layer: 0
   m_Name: Step 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2472,7 +2472,7 @@ GameObject:
   - component: {fileID: 1393725140}
   m_Layer: 0
   m_Name: Ground 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2732,7 +2732,7 @@ GameObject:
   - component: {fileID: 1567575346}
   m_Layer: 0
   m_Name: SmallGround 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3000,7 +3000,7 @@ GameObject:
   - component: {fileID: 1795987213}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3043,7 +3043,7 @@ GameObject:
   - component: {fileID: 1917951367}
   m_Layer: 0
   m_Name: Ground 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3288,6 +3288,14 @@ PrefabInstance:
     - target: {fileID: 913245731585876380, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658725956890054840, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658725956890054840, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
       propertyPath: m_RootOrder
