@@ -17,7 +17,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI advisoryText; //Texto de advertencia tras comprar / vender
     private Item item; //Item que se está vendiendo 
     private GameObject player; //Hay que acceder al dinero del jugador
-    private TextMeshProUGUI playerBudget; //Dinero del jugador (almacenado de momento en un string)
+    private PlayerInventoryManager playerInventory; //Dinero del jugador (almacenado de momento en un string)
     private string costInfo; //Cadena que se muestra la información de compra del objeto
     private TextMeshProUGUI buttonString; //Texto del botón
     private bool canBeBought = true; //Indica si un ítem se puede comprar o no
@@ -39,7 +39,7 @@ public class ShopItem : MonoBehaviour
         buttonString.text = costInfo;
         //Variables del jugador:
         player = GameObject.FindWithTag("Player");
-        playerBudget = player.GetComponentInChildren<TextMeshProUGUI>();
+        playerInventory = player.GetComponentInChildren<PlayerInventoryManager>();
     }
 
     // Update is called once per frame
@@ -57,7 +57,7 @@ public class ShopItem : MonoBehaviour
             buttonString.text = "Obtenido";
             canBeBought = false;
         }
-        else if (int.Parse(playerBudget.text) < item.cost) //El jugador no posee el ítem y no lo puede comprar
+        else if (playerInventory.money < item.cost) //El jugador no posee el ítem y no lo puede comprar
         {
             button.image.color = new Color(1.0f, 0.32f, 0.32f, 1.0f);
             buttonString.text = costInfo;
@@ -102,7 +102,7 @@ public class ShopItem : MonoBehaviour
                 ReturnObject();
             }
         } 
-        else if(!item.bought && int.Parse(playerBudget.text) < item.cost) //Si no se puede comprar a falta de dinero se muestra que el jugador es pobre
+        else if(!item.bought && playerInventory.money < item.cost) //Si no se puede comprar a falta de dinero se muestra que el jugador es pobre
         {
             advisoryText.text = "¡Dinero insuficiente!";
             StartCoroutine(ShowAdvisoryText());
@@ -113,7 +113,7 @@ public class ShopItem : MonoBehaviour
     {
         itemToBuy.ItemBought(true);
         itemToBuy.AddToInventory(itemToBuy.itemName);
-        playerBudget.text = (int.Parse(playerBudget.text) - itemToBuy.cost).ToString();
+        playerInventory.AddMoney(-itemToBuy.cost);
         advisoryText.text = $"{itemToBuy.itemName} añadido al inventario con éxito.";
         StartCoroutine(ShowAdvisoryText());
     }
@@ -122,15 +122,19 @@ public class ShopItem : MonoBehaviour
     {
         itemToBuy.ItemBought(false);
         itemToBuy.RemoveFromInventory(itemToBuy.itemName);
-        playerBudget.text = (int.Parse(playerBudget.text) + itemToBuy.cost).ToString();
+        playerInventory.AddMoney(itemToBuy.cost);
         advisoryText.text = $"{itemToBuy.itemName} devuelto con éxito.";
         StartCoroutine(ShowAdvisoryText());
     }
 
     IEnumerator ShowAdvisoryText()
     {
+        string originalString = advisoryText.text;
         advisoryText.transform.parent.gameObject.SetActive(true);
         yield return new WaitForSeconds(3.0f);
-        advisoryText.transform.parent.gameObject.SetActive(false);
+        string finalString = advisoryText.text;
+        if(originalString == finalString) advisoryText.transform.parent.gameObject.SetActive(false); //Si el contenido ha cambiado el cuadro no desaparece
+                                                                                                     //Significa que el jugador ha tocado algo que ha hecho surgir otro texto
+                                                                                                     //emergente, por lo que los 3 segundos se resetean
     }
 }
