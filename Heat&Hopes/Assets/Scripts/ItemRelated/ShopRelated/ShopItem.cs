@@ -129,8 +129,8 @@ public class ShopItem : MonoBehaviour
 
     IEnumerator ShowAdvisoryText()
     {
-        advisoryText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
-        advisoryText.gameObject.SetActive(false);
+        advisoryText.transform.parent.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        advisoryText.transform.parent.gameObject.SetActive(false);
     }
 }

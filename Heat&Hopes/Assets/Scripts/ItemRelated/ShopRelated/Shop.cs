@@ -11,6 +11,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject returnMenu; //Menú de devolución de compras
     [SerializeField] private GameObject advisoryText; //Texto de advertencia de compras / ventas
     [SerializeField] private GameObject confirmationButton; //Texto de advertencia de compras / ventas
+    [SerializeField] private GameObject keyText; //Texto que recuerda qué tecla debe ser pulsada para acceder a la tienda
     private bool canEnterShop = false; //Booleano que indica si el jugador se encuentra al lado del punto de acceso a la tienda para poder acceder a ella
     private bool shopIsOpen = false; //Booleano que indica si la tienda se encuentra desplegada o no
                                      //ShopIsOpen debería ser un booleano del menú de pausa, y se debería acceder a él desde este script
@@ -26,6 +27,7 @@ public class Shop : MonoBehaviour
         confirmMenu.SetActive(false);
         returnMenu.SetActive(false);
         advisoryText.SetActive(false);
+        keyText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,10 +61,12 @@ public class Shop : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) canEnterShop = true;
+        keyText.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) canEnterShop = false;
+        keyText.SetActive(false);
     }
 }
