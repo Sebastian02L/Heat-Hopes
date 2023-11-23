@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb; //Referencia al componente Rigidbody
     public bool grounded; //Parametro que dice si el personaje esta en el suelo
+    private bool canMove = true; //Booleano que indica si el jugador se puede mover o no
     [Header("Atributos")]
     public float speed;
     public float jumpForce;
@@ -16,12 +17,13 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        MovementInput();
+        if (canMove) MovementInput();
+        else rb.velocity *= new Vector2(0, 1); //Se detiene su movimiento en seco en el eje x
     }
 
     private void Update()
     {
-        JumpInput();
+        if(canMove) JumpInput();
     }
 
     private void MovementInput() //Esta funcion maneja el movimiento dependiendo de la tecla pulsada
@@ -54,5 +56,10 @@ public class PlayerController : MonoBehaviour
         {
             jump = true;
         }
+    }
+
+    public void ToggleMovement() //Altera el permiso de movimiento del jugador
+    {
+        canMove = !canMove;
     }
 }
