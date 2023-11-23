@@ -80,6 +80,7 @@ public class ShopItem : MonoBehaviour
         {
             if (confirmation) //Si las confirmaciones están activadas se pregunta al jugador si realmente lo quiere comprar
             {
+                shop.ToggleEnableAccess(); //Mientras esté desplegado el menú de confirmación la tienda no se puede abrir la tienda de nuevo para evitar bugs
                 confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea comprar '{itemToBuy.itemName}'? Podrá devolverlo si no lo usa.";
                 shopMenu.SetActive(false);
                 confirmMenu.SetActive(true);
@@ -93,6 +94,7 @@ public class ShopItem : MonoBehaviour
         {
             if (confirmation) //Si las confirmaciones están activadas se pregunta al jugador si realmente lo quiere devolver
             {
+                shop.ToggleEnableAccess();
                 returnMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea devolver '{itemToBuy.itemName}'?";
                 shopMenu.SetActive(false);
                 returnMenu.SetActive(true);

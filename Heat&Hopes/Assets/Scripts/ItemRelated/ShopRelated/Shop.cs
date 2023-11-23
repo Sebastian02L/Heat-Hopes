@@ -12,7 +12,8 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject advisoryText; //Texto de advertencia de compras / ventas
     [SerializeField] private GameObject confirmationButton; //Texto de advertencia de compras / ventas
     [SerializeField] private GameObject keyText; //Texto que recuerda qué tecla debe ser pulsada para acceder a la tienda
-    private bool canEnterShop = false; //Booleano que indica si el jugador se encuentra al lado del punto de acceso a la tienda para poder acceder a ella
+    private PlayerController player; //Jugador
+    private bool onShopRange = false; //Booleano que indica si el jugador se encuentra al lado del punto de acceso a la tienda para poder acceder a ella
     private bool shopIsOpen = false; //Booleano que indica si la tienda se encuentra desplegada o no
                                      //ShopIsOpen debería ser un booleano del menú de pausa, y se debería acceder a él desde este script
                                      //para alterar su valor y que no se pueda pausar el juego si se le da a ESC
@@ -23,6 +24,7 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         shop.SetActive(false);
         confirmMenu.SetActive(false);
         returnMenu.SetActive(false);
@@ -33,8 +35,8 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canEnterShop && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Keypad0))) ToggleAccessShop();
-        if (shopIsOpen && Input.GetKeyDown(KeyCode.Escape)) ToggleAccessShop(); //También se puede cerrar la tienda con ESC
+        if (onShopRange && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Keypad0))) ToggleAccessShop();
+        if (onShopRange && shopIsOpen && Input.GetKeyDown(KeyCode.Escape)) ToggleAccessShop(); //También se puede cerrar la tienda con ESC
     }
 
     public void ToggleAccessShop() //Función que alterna la tienda: si el menú de la tienda está cerrado lo abre y si está abierto lo cierra
@@ -43,6 +45,7 @@ public class Shop : MonoBehaviour
         shopIsOpen = !shopIsOpen;
         if (advisoryText.activeSelf) advisoryText.SetActive(false);
         shop.SetActive(!shop.activeSelf);
+        player.ToggleMovement(); //Impide el movimiento del jugador si la tienda está abierta y lo permite si está cerrada
     }
 
     public void ToggleConfirmation() //Opción que habilita/deshabilita confirmaciones
@@ -58,15 +61,22 @@ public class Shop : MonoBehaviour
         }
     }
 
+    public void ToggleEnableAccess() //Cuando se ha confirmado una acción el jugador puede volver a abrir la tienda
+                                     //Si el jugador se encuentra en el menú de confirmación y no se le restringe el acceso a tiendas
+                                     //puede darle a la F y volver a abrirla
+    {
+        onShopRange = !onShopRange;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) canEnterShop = true;
+        if (collision.CompareTag("Player")) onShopRange = true;
         keyText.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) canEnterShop = false;
+        if (collision.CompareTag("Player")) onShopRange = false;
         keyText.SetActive(false);
     }
 }
