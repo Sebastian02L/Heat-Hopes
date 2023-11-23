@@ -12,9 +12,9 @@ public class Behaviour : MonoBehaviour
     //Atributos para controlar el movimiento:
     public float speedWalk;
     public float speedRun;
-    public bool isRight;
-    public float timerMovement;
-    public float ChangeDirTime = 8f;
+    public bool isRight = true;
+    public float leftXBound;
+    public float rightXBound;
 
     //Atributos para perseguir al jugador;
     public GameObject target;
@@ -23,15 +23,9 @@ public class Behaviour : MonoBehaviour
 
     //Atributos para atacar al jugador:
     public bool attacking;
-    
-
-    void Start()
-    {
-        timerMovement = ChangeDirTime;
-    }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Behaviours();
     }
@@ -45,19 +39,22 @@ public class Behaviour : MonoBehaviour
             //Movimiento del enemigo.
             if (isRight == true)
             {
-                transform.position += Vector3.right * speedWalk * Time.deltaTime;
+                transform.position += Vector3.right * speedWalk * Time.fixedDeltaTime;
             }
             else
             {
-                transform.position += Vector3.left * speedWalk * Time.deltaTime;
+                transform.position += Vector3.left * speedWalk * Time.fixedDeltaTime;
             }
 
-            timerMovement -= Time.deltaTime;
-            if (timerMovement <= 0)
+            if (transform.position.x >= rightXBound)
             {
-                timerMovement = ChangeDirTime;
-                isRight = !isRight;
+                isRight = false;
             }
+            else if (transform.position.x <= leftXBound) 
+            { 
+                isRight = true;
+            }
+            
         }
 
         else {
@@ -66,12 +63,12 @@ public class Behaviour : MonoBehaviour
 
                 if (transform.position.x < target.transform.position.x)
                 { //El jugador se encuentra a la derecha
-                    transform.Translate(Vector3.right * speedRun * Time.deltaTime);
+                    transform.Translate(Vector3.right * speedRun * Time.fixedDeltaTime);
                     
                 }
                 else
                 {//El jugador se encuentra a la izquierda
-                    transform.Translate(Vector3.left * speedRun * Time.deltaTime);
+                    transform.Translate(Vector3.left * speedRun * Time.fixedDeltaTime);
                     
                 }
             }

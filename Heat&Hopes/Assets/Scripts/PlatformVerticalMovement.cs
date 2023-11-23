@@ -11,9 +11,13 @@ public class PlatformVerticalMovement : MonoBehaviour
    
     void FixedUpdate() //De normal va hacia abajo, siempre que el bool goDown este puesto a true y la plataforma no se pase del limite inferior
     {
-        if (goDown && transform.position.y >= downLimit) 
-        { 
+        if (goDown && transform.position.y >= downLimit)
+        {
             transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
+        }
+        else if (!goDown && transform.position.y <= upLimit)
+        {
+            transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);  
         }
     }
     private void OnCollisionEnter2D(Collision2D other) //Si el jugador la toca, esta pone a false goDown
@@ -21,15 +25,6 @@ public class PlatformVerticalMovement : MonoBehaviour
         if (other.collider.CompareTag("Player"))
         {
             goDown = false;
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D other) //Se mueve hacia arriba mientras el jugador esta encima
-    {
-        if (other.collider.CompareTag("Player")) 
-        {
-            if (transform.position.y <= upLimit)
-                transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);
         }
     }
 
