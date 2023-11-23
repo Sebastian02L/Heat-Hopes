@@ -5,8 +5,7 @@ using UnityEngine;
 public class MoneyActivable : MonoBehaviour
 {
     public GameObject onRangeIndicator; //Indicador de que el jugador puede activarlo
-    private MoneyManager moneyManager;
-    private float t;
+    protected PlayerInventoryManager moneyManager;
     public bool onRange;
     public int price;
     public bool onlyOnce; //Por si solo se puede activar una vez
@@ -14,28 +13,21 @@ public class MoneyActivable : MonoBehaviour
     // Start is called before the first frame update
     protected void MoneyStart() //Este Start tiene que llamarlo el script hijo
     {
-        moneyManager = GameObject.Find("Player").GetComponent<MoneyManager>(); //Referencia al dinero del jugador
+        moneyManager = GameObject.Find("Player").GetComponentInChildren<PlayerInventoryManager>(); //Referencia al dinero del jugador
     }
 
     // Update is called once per frame
-    protected void MoneyFixedUpdate() //Este FixedUpdate tiene que llamarlo el script hijo
+    protected void MoneyUpdate() //Este FixedUpdate tiene que llamarlo el script hijo
     {
         onRangeIndicator.SetActive(onRange);
-        if (t > 0)
+        if (onRange && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Keypad0)) && !used) 
         {
-            t -= Time.deltaTime;
-        }
-        if (onRange && (Input.GetKey(KeyCode.F) || Input.GetKey(KeyCode.Keypad0)) && !used && t<=0) 
-        {
-            t = 0.5f;
-
             if (moneyManager.money>=price)
             {
                 if (onlyOnce)
                 {
                     used = true;
                 }
-                moneyManager.changeMoney(-price);
                 Use();
             }
             else
