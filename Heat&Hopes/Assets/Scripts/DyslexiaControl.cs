@@ -113,11 +113,11 @@ public class DyslexiaControl : MonoBehaviour
     public void confirmChanges()
     {
         //Lista auxiliar que recibe la lista de textos
-        List<TextConfiguration> textList = textContainer.GetComponent<TextContainer>().getList();
+        List<GameObject> textList = textContainer.GetComponent<TextContainer>().getList();
 
-        foreach(TextConfiguration textConfiguration in textList)
+        foreach(GameObject textConfiguration in textList)
         {
-            textConfiguration.updateText(text.characterSpacing, fontSizeChange, text.lineSpacing);
+            textConfiguration.GetComponent<TextConfiguration>().updateText(text.characterSpacing, fontSizeChange, text.lineSpacing);
         }
         //El tamaño del texto de referencia se pasará de sus limites luego de esta llamada (porque se aplica dos veces), por lo tanto
         //Si el tamaño del texto es < 20, asignamos su valor mínimo, para que no se pueda seguir reduciendo su tamaño
