@@ -1,36 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
-public class Boots : Item
+public class ScriptForTestingBoots : MonoBehaviour
 {
     private float _maxEnergy = 4f;
-    private float _currEnergy;
-    private float _thrustForce = 0.5f;
+    public float _currEnergy;
+    private float _thrustForce = 0.1f;
 
     private Rigidbody2D _playerRigidBody;
+    private PlayerController _playerController;
 
     private bool _abilityKeyPressed = false;
-
-    private static bool used = false;
-    private static bool acquired = false;
 
     private void Awake()
     {
         _playerRigidBody = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        _playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         _currEnergy = _maxEnergy;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        hasBeenUsed = used;
-        bought = acquired;
-
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             _abilityKeyPressed = true;
@@ -41,31 +39,20 @@ public class Boots : Item
             _abilityKeyPressed = false;
         }
 
-        if (isActive && _abilityKeyPressed && _currEnergy > 0)
+        if (_abilityKeyPressed && _currEnergy > 0)
         {
-            used = true;
-
             _currEnergy -= Time.deltaTime;
             _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
 
-            Debug.Log($"Habilidad de {itemName} usada.");
+            Debug.Log("Habilidad de prueba usada");
         }
-        else
+
+        if(_playerController.grounded == true)
         {
             if (_currEnergy < _maxEnergy)
             {
                 _currEnergy += Time.deltaTime;
             }
         }
-    }
-
-    protected override void UseAbility()
-    {
-        
-    }
-
-    public override void ItemBought(bool state)
-    {
-        acquired = state;
     }
 }
