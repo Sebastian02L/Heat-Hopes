@@ -13,6 +13,7 @@ public class Boots : Item
     private PlayerController _player;
     private Rigidbody2D _playerRigidBody;
     private Slider _slider;
+    private PauseMenu _pauseMenu;
 
     private bool _abilityKeyPressed = false;
 
@@ -24,6 +25,7 @@ public class Boots : Item
         _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
         _slider = GameObject.Find("EnergyBar").GetComponent<Slider>();
+        _pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
     }
 
     private void Start()
@@ -37,14 +39,17 @@ public class Boots : Item
         hasBeenUsed = used;
         bought = acquired;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (!_pauseMenu.gameIsPaused)
         {
-            _abilityKeyPressed = true;
-        }
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _abilityKeyPressed = true;
+            }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            _abilityKeyPressed = false;
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                _abilityKeyPressed = false;
+            }
         }
 
         if (isActive && _abilityKeyPressed && _currEnergy > 0 && _player.canMove)
