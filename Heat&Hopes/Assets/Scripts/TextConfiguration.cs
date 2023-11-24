@@ -24,8 +24,8 @@ public class TextConfiguration : MonoBehaviour
         text.characterSpacing = characterSpacing;
         text.lineSpacing = lineSpacing;
 
-        //Agregamos la instancia a la lista de textos de la clase DyslexiaControl
-        GameObject.Find("DyslexiaMenu").GetComponent<DyslexiaControl>().addToList(this);
+        //Agregamos la instancia a la lista de textos de la clase TextContainer (un gameObject está en la jerarquia guardando los textos)
+        GameObject.Find("TextManager").GetComponent<TextContainer>().addToList(this);
     }
 
     public void updateText(float character, float fontSizeChange, float line)

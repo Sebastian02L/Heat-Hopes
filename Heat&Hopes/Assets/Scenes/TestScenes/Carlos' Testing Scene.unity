@@ -258,11 +258,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2512870}
   m_CullTransparentMesh: 1
---- !u!4 &17185873 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-  m_PrefabInstance: {fileID: 746432204}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &29425682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1520,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1493933645}
         m_TargetAssemblyTypeName: DyslexiaControl, Assembly-CSharp
         m_MethodName: changeLetterDistance
         m_Mode: 0
@@ -2769,7 +2764,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1493933645}
         m_TargetAssemblyTypeName: DyslexiaControl, Assembly-CSharp
         m_MethodName: changeFontSizeBigger
         m_Mode: 4
@@ -4245,67 +4240,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716726973}
   m_CullTransparentMesh: 1
---- !u!1001 &746432204
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 913245731585876380, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479230596553979615, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19e2db2811439104aa27b0bb3519166e, type: 3}
 --- !u!1 &746474323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4855,7 +4789,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1493933645}
         m_TargetAssemblyTypeName: DyslexiaControl, Assembly-CSharp
         m_MethodName: changeFontSizeSmaller
         m_Mode: 4
@@ -5357,6 +5291,7 @@ GameObject:
   - component: {fileID: 836579807}
   - component: {fileID: 836579809}
   - component: {fileID: 836579808}
+  - component: {fileID: 836579810}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5481,6 +5416,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836579806}
   m_CullTransparentMesh: 1
+--- !u!114 &836579810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836579806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c76cec916fd79447adb5a5268fb7ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &853299923
 GameObject:
   m_ObjectHideFlags: 0
@@ -5703,6 +5650,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880706934}
   m_CullTransparentMesh: 1
+--- !u!4 &922500035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+  m_PrefabInstance: {fileID: 1682076391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &930423134
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,7 +8180,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 17185873}
+  m_Follow: {fileID: 922500035}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -9484,6 +9436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d3b91ca1e38df48b8b63e9851dba80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textContainer: {fileID: 1909409194}
 --- !u!1 &1497195296
 GameObject:
   m_ObjectHideFlags: 0
@@ -9921,6 +9874,7 @@ GameObject:
   - component: {fileID: 1591550564}
   - component: {fileID: 1591550566}
   - component: {fileID: 1591550565}
+  - component: {fileID: 1591550567}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10045,6 +9999,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591550563}
   m_CullTransparentMesh: 1
+--- !u!114 &1591550567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591550563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c76cec916fd79447adb5a5268fb7ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1601470848
 GameObject:
   m_ObjectHideFlags: 0
@@ -10593,6 +10559,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678052228}
   m_CullTransparentMesh: 1
+--- !u!1001 &1682076391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.806028
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7267666
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351899456853337626, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14cb249685059174386652fe29948688, type: 3}
 --- !u!1 &1695397219
 GameObject:
   m_ObjectHideFlags: 0
@@ -11574,7 +11601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1493933645}
         m_TargetAssemblyTypeName: DyslexiaControl, Assembly-CSharp
         m_MethodName: confirmChanges
         m_Mode: 1
@@ -12247,7 +12274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894693153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -1, z: -10}
+  m_LocalPosition: {x: -10.806028, y: -2.7267666, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12496,6 +12523,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900379809}
   m_CullTransparentMesh: 1
+--- !u!1 &1909409194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1909409196}
+  - component: {fileID: 1909409195}
+  m_Layer: 0
+  m_Name: TextManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1909409195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909409194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a39429977f03c49adaa1c4e8917dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1909409196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909409194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.678484, y: 9.421079, z: 44.91732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919848208
 GameObject:
   m_ObjectHideFlags: 0
@@ -13000,6 +13071,7 @@ GameObject:
   - component: {fileID: 1962700043}
   - component: {fileID: 1962700045}
   - component: {fileID: 1962700044}
+  - component: {fileID: 1962700046}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13047,7 +13119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Men\xFA de Opciones"
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13124,6 +13196,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962700042}
   m_CullTransparentMesh: 1
+--- !u!114 &1962700046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962700042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c76cec916fd79447adb5a5268fb7ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1973680011
 GameObject:
   m_ObjectHideFlags: 0
@@ -14021,7 +14105,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1493933645}
         m_TargetAssemblyTypeName: DyslexiaControl, Assembly-CSharp
         m_MethodName: changeLineDistance
         m_Mode: 0

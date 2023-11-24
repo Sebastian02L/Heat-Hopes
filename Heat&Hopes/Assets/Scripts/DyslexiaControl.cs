@@ -21,8 +21,7 @@ public class DyslexiaControl : MonoBehaviour
     private float minFontTestText = 20;     //Almacena el valor minimo para el texto de referencia
     private float maxFontTestText = 28;     //Almacena el valor máximo para el texto de referencia
 
-    //Lista con todos los textos del juego
-    private List<TextConfiguration> textList = new List<TextConfiguration>();   
+    public GameObject textContainer;
  
     private void Awake()
     {
@@ -110,14 +109,12 @@ public class DyslexiaControl : MonoBehaviour
         }
     }
 
-    public void addToList(TextConfiguration textToAdd)
-    {
-        textList.Add(textToAdd);
-    }
-
     //Confirma los cambios hechos por el usuario recorriendo la lista de textos y actualizando sus atributos
     public void confirmChanges()
     {
+        //Lista auxiliar que recibe la lista de textos
+        List<TextConfiguration> textList = textContainer.GetComponent<TextContainer>().getList();
+
         foreach(TextConfiguration textConfiguration in textList)
         {
             textConfiguration.updateText(text.characterSpacing, fontSizeChange, text.lineSpacing);
@@ -133,7 +130,7 @@ public class DyslexiaControl : MonoBehaviour
         {
             text.fontSize = maxFontTestText;
         } 
-        //Reiniciamos la variable a 0
+        //Reiniciamos la variable a 0 y liberamos la lista auxiliar
         fontSizeChange = 0;
     }
 }
