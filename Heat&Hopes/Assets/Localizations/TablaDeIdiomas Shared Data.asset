@@ -59,6 +59,14 @@ MonoBehaviour:
     m_Key: Dilesxia_Titulo_Idioma
     m_Metadata:
       m_Items: []
+  - m_Id: 4244635236737024
+    m_Key: puertaFaltaDinero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4246640084688896
+    m_Key: puertaConfirmar
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
