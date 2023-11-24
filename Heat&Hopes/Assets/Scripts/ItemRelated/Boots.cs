@@ -7,8 +7,9 @@ public class Boots : Item
 {
     private float _maxEnergy = 4f;
     private float _currEnergy;
-    private float _thrustForce = 0.5f;
+    private float _thrustForce = 0.1f;
 
+    private PlayerController _player;
     private Rigidbody2D _playerRigidBody;
 
     private bool _abilityKeyPressed = false;
@@ -18,7 +19,8 @@ public class Boots : Item
 
     private void Awake()
     {
-        _playerRigidBody = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        _playerRigidBody = _player.GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -41,7 +43,7 @@ public class Boots : Item
             _abilityKeyPressed = false;
         }
 
-        if (isActive && _abilityKeyPressed && _currEnergy > 0)
+        if (isActive && _abilityKeyPressed && _currEnergy > 0 && _player.canMove)
         {
             used = true;
 
@@ -50,7 +52,7 @@ public class Boots : Item
 
             Debug.Log($"Habilidad de {itemName} usada.");
         }
-        else
+        else //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
         {
             if (_currEnergy < _maxEnergy)
             {

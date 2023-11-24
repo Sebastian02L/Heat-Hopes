@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
 {
     public Sprite image; //Imagen que tiene en el menú de inventario y tienda
     public int cost; //Costo en la tienda del objeto
-    public bool isActive; //Indica si el objeto está seleccionado y puede ser usado
+    public bool isActive = false; //Indica si el objeto está seleccionado y puede ser usado
     public bool bought = false; //Indica si el ítem ha sido comprado o no
     public string itemName; //Nombre del ítem
     public string description; //Descripción del ítem

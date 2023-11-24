@@ -5,12 +5,15 @@ using TMPro;
 
 public class PlayerInventoryManager : MonoBehaviour
 {
+    //Dinero:
     public float money; //Dinero del jugador
     [SerializeField] private TextMeshProUGUI text; //Texto de la GUI que despliega el texto
+    //Ítems:                                               
     private PlayerController player;
     public Item[] items = new Item[5]; //Array de ítems del jugador
     private int numItems = 0; //Número de ítems que el jugador tiene actualmente
     private Item currentItem; //Ítem seleccionado por el jugador
+    //Energía:
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +65,7 @@ public class PlayerInventoryManager : MonoBehaviour
     public void AddItem(Item itemToAdd) //Se añade un clon del objeto de la tienda
     {
         Debug.Log($"{itemToAdd.itemName} añadido al inventario");
-        items[numItems] = itemToAdd; 
+        items[numItems] = Instantiate(itemToAdd); 
         numItems++;
         //De momento no hay ningún problema con que el inventario esté lleno al comprar un ítem, pues hay menos ítems que slots
     }
@@ -72,7 +75,7 @@ public class PlayerInventoryManager : MonoBehaviour
         bool itemFound = false;
         for(int i = 0; i < items.Length && !itemFound; i++)
         {
-            if (items[i] == itemToRemove)
+            if (items[i].itemName == itemToRemove.itemName)
             {
                 Debug.Log($"{itemToRemove.itemName} eliminado del inventario");
                 itemFound = true;
