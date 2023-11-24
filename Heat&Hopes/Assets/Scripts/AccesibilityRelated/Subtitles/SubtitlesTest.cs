@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SubtitlesTest : MonoBehaviour
 {
-    public AudioSource dialogAudio; //este script solo sirve para que se reproduzca el audio
     public GameObject audioManager;
     private AudioSubtitlesManager subtitlesManager;
 
