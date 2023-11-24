@@ -9,10 +9,15 @@ public class Boots : Item
     private float _currEnergy;
     private float _thrustForce = 0.5f;
 
-    //public Rigidbody rigidBody;
+    private Rigidbody _playerRigidBody;
 
     private static bool used = false;
     private static bool acquired = false;
+
+    private void Awake()
+    {
+        _playerRigidBody = GameObject.Find("Player").GetComponent<Rigidbody>();
+    }
 
     private void Start()
     {
@@ -25,14 +30,25 @@ public class Boots : Item
         bought = acquired;
         if (isActive && (Input.GetKeyDown(KeyCode.Mouse0)) && _currEnergy > 0)
         {
-            UseAbility();
+            used = true;
+
+            _currEnergy -= Time.deltaTime;
+            _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode.Impulse);
+
+            Debug.Log($"Habilidad de {itemName} usada.");
+        }
+        else
+        {
+            if (_currEnergy < _maxEnergy)
+            {
+                _currEnergy += Time.deltaTime;
+            }
         }
     }
 
     protected override void UseAbility()
     {
-        used = true;
-        Debug.Log($"Habilidad de {itemName} usada.");
+        
     }
 
     public override void ItemBought(bool state)
