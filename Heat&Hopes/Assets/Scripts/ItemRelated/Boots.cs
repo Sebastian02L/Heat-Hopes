@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boots : Item
 {
@@ -11,6 +12,7 @@ public class Boots : Item
 
     private PlayerController _player;
     private Rigidbody2D _playerRigidBody;
+    private Slider _slider;
 
     private bool _abilityKeyPressed = false;
 
@@ -21,11 +23,13 @@ public class Boots : Item
     {
         _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
+        _slider = GameObject.Find("EnergyBar").GetComponent<Slider>();
     }
 
     private void Start()
     {
         _currEnergy = _maxEnergy;
+        _slider.value = _currEnergy;
     }
 
     private void Update()
@@ -48,6 +52,7 @@ public class Boots : Item
             used = true;
 
             _currEnergy -= Time.deltaTime;
+            _slider.value = _currEnergy;
 
             if (_currEnergy > 0.1)
             {
@@ -59,6 +64,7 @@ public class Boots : Item
         else if (_abilityKeyPressed && _currEnergy <= 0) 
         {
             _currEnergy = 0;
+            _slider.value = _currEnergy;
             Debug.Log("Sin energía");
         }
 
@@ -67,11 +73,13 @@ public class Boots : Item
             if (_currEnergy < _maxEnergy)
             {
                 _currEnergy += Time.deltaTime;
+                _slider.value = _currEnergy;
                 Debug.Log("Recargando Energía");
             }
             else
             {
                 _currEnergy = _maxEnergy;
+                _slider.value = _currEnergy;
                 Debug.Log("Energía máxima alcanzada");
             }
         }
