@@ -1049,12 +1049,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7072319840058843149, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-<<<<<<< Updated upstream
+
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 9131657488387081979, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-=======
->>>>>>> Stashed changes
+
+
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
@@ -2641,12 +2641,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7072319840058843149, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-<<<<<<< Updated upstream
+
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 9131657488387081979, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-=======
->>>>>>> Stashed changes
+
+
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
@@ -5921,7 +5921,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< Updated upstream
+
 --- !u!1001 &1017210649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6016,8 +6016,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14cb249685059174386652fe29948688, type: 3}
-=======
->>>>>>> Stashed changes
+
+
 --- !u!1001 &1044986635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6086,12 +6086,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7072319840058843149, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-<<<<<<< Updated upstream
+
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 9131657488387081979, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-=======
->>>>>>> Stashed changes
+
+
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
@@ -9616,12 +9616,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7072319840058843149, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-<<<<<<< Updated upstream
+
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9131657488387081979, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
-=======
->>>>>>> Stashed changes
+
+
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
