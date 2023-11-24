@@ -21,11 +21,11 @@ public class DoorController : MoneyActivable //Hereda de MoneyActivable
     }
     protected override void Use()
     {
+        base.Use(); //Se tiene que utilizar la base de la función
         if (animator != null)
         {
             animator.SetTrigger("Open"); //Si hay una animación de abrir, se tiene que iniciar con un trigger llamado Open
         }
-        moneyManager.AddMoney(-price);
         Destroy(gameObject,timeToDestroy);
     }
 }
