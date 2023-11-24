@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3208501067188484931}
   - component: {fileID: 845171194312469836}
+  - component: {fileID: -8034790132760157096}
+  - component: {fileID: -8132891205632469084}
   m_Layer: 0
   m_Name: nave_1
   m_TagString: Untagged
@@ -84,3 +86,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8034790132760157096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440877683903394380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73df5d256892134fb9f6ae5da833d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8132891205632469084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440877683903394380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1177b7795ee3b904994d0822e1d353d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
