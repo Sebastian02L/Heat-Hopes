@@ -28,8 +28,9 @@ public class MainMenuController : MonoBehaviour
                     loadOverlay.SetActive(true);
                 }
                 break;
-            case 2:
+            case 1:
                 //Salir
+                Debug.Log("Closing Application...");
                 Application.Quit();
                 break;
 
