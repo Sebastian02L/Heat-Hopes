@@ -6758,7 +6758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 656, y: 392}
+  m_AnchoredPosition: {x: 678, y: 421}
   m_SizeDelta: {x: 12.058, y: 3.015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559222346
@@ -9426,7 +9426,6 @@ MonoBehaviour:
   player: {fileID: 135296713}
   t: 0
   offsetX: 25
-  speed: 7
   starships:
   - {fileID: 8440877683903394380, guid: fcbf1b552c3ff7f45ac47e62d0b9d0f2, type: 3}
   - {fileID: 5491306838925214614, guid: 65039162f5ffb984bb659cd6dfaa8d4d, type: 3}
@@ -18009,7 +18008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 606, y: -378}
+  m_AnchoredPosition: {x: -282, y: 99}
   m_SizeDelta: {x: 481.18, y: 82.575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1611443671
@@ -19706,10 +19705,10 @@ RectTransform:
   m_Father: {fileID: 835511198}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_SizeDelta: {x: -0.00012207031, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1780062756
 GameObject:

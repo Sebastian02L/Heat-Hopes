@@ -28,15 +28,7 @@ public class MainMenuController : MonoBehaviour
                     loadOverlay.SetActive(true);
                 }
                 break;
-            case 1:
-                //Cargar escena de ajustes, debería ser una parte del canvas
-                SceneManager.LoadScene("Carlos' Testing Scene");
-                break;
             case 2:
-                //Cargar escena de accesibilidad, debería ser una parte del canvas
-                SceneManager.LoadScene("Dyslexia Test");
-                break;
-            case 3:
                 //Salir
                 Application.Quit();
                 break;
