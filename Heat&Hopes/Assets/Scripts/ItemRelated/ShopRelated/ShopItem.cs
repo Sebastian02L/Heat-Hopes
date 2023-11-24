@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class ShopItem : MonoBehaviour
 {
@@ -114,7 +115,7 @@ public class ShopItem : MonoBehaviour
     public void ConfirmPurchase() //Realiza la compra
     {
         itemToBuy.ItemBought(true);
-        itemToBuy.AddToInventory(itemToBuy.itemName);
+        playerInventory.AddItem(itemToBuy);
         playerInventory.AddMoney(-itemToBuy.cost);
         advisoryText.text = $"{itemToBuy.itemName} añadido al inventario con éxito.";
         StartCoroutine(ShowAdvisoryText());
@@ -123,7 +124,7 @@ public class ShopItem : MonoBehaviour
     public void ReturnObject() //Realiza la devolución
     {
         itemToBuy.ItemBought(false);
-        itemToBuy.RemoveFromInventory(itemToBuy.itemName);
+        playerInventory.RemoveItem(itemToBuy);
         playerInventory.AddMoney(itemToBuy.cost);
         advisoryText.text = $"{itemToBuy.itemName} devuelto con éxito.";
         StartCoroutine(ShowAdvisoryText());

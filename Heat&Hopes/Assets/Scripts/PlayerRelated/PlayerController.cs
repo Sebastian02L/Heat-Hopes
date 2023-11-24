@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb; //Referencia al componente Rigidbody
     public bool grounded; //Parametro que dice si el personaje esta en el suelo
-    private bool canMove = true; //Booleano que indica si el jugador se puede mover o no
+    public bool canMove = true; //Booleano que indica si el jugador se puede mover o no
     [Header("Atributos")]
     public float speed;
     public float jumpForce;
