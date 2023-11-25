@@ -6,13 +6,10 @@ using UnityEngine.UI;
 
 public class Boots : Item
 {
-    private float _maxEnergy = 2f;
-    private float _currEnergy;
     private float _thrustForce = 1f;
-
     private PlayerController _player;
+    private PlayerInventoryManager _inventory;
     private Rigidbody2D _playerRigidBody;
-    private Slider _slider;
     private PauseMenu _pauseMenu;
 
     private bool _abilityKeyPressed = false;
@@ -23,15 +20,14 @@ public class Boots : Item
     private void Awake()
     {
         _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        _inventory = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerInventoryManager>();
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
-        _slider = GameObject.Find("EnergyBar").GetComponent<Slider>();
         _pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
     }
 
     private void Start()
     {
-        _currEnergy = _maxEnergy;
-        _slider.value = _currEnergy;
+
     }
 
     private void Update()
@@ -55,41 +51,23 @@ public class Boots : Item
 
     private void FixedUpdate()
     {
-        if (isActive && _abilityKeyPressed && _currEnergy > 0 && _player.canMove)
+        if (isActive && _abilityKeyPressed && _inventory.energy > 0 && _player.canMove)
         {
             used = true;
 
-            _currEnergy -= Time.fixedDeltaTime;
-            _slider.value = _currEnergy;
+            _inventory.UpdateEnergy(-Time.fixedDeltaTime);
 
-            if (_currEnergy > 0.1)
+            if (_inventory.energy > 0.1) //Pequeña décima para que no empiece a volar directamente desde el suelo
             {
                 _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
             }
 
             Debug.Log($"Habilidad de {itemName} en uso. Gastando energía...");
         }
-        else if (_abilityKeyPressed && _currEnergy <= 0)
-        {
-            _currEnergy = 0;
-            _slider.value = _currEnergy;
-            Debug.Log("Sin energía");
-        }
 
         if (_player.grounded == true) //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
         {
-            if (_currEnergy < _maxEnergy)
-            {
-                _currEnergy += Time.fixedDeltaTime;
-                _slider.value = _currEnergy;
-                Debug.Log("Recargando Energía");
-            }
-            else
-            {
-                _currEnergy = _maxEnergy;
-                _slider.value = _currEnergy;
-                Debug.Log("Energía máxima alcanzada");
-            }
+            _inventory.UpdateEnergy(Time.fixedDeltaTime);
         }
     }
 

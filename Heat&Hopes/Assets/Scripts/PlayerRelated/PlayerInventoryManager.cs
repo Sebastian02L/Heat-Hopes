@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerInventoryManager : MonoBehaviour
 {
@@ -14,11 +15,16 @@ public class PlayerInventoryManager : MonoBehaviour
     private int numItems = 0; //Número de ítems que el jugador tiene actualmente
     private Item currentItem; //Ítem seleccionado por el jugador
     //Energía:
+    public float energy;
+    private float maxEnergy = 2f;
+    private Slider slider; 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        energy = maxEnergy;
+        slider = GameObject.Find("EnergyBar").GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -99,5 +105,13 @@ public class PlayerInventoryManager : MonoBehaviour
             currentItem.isActive = true;
             Debug.Log($"{currentItem.itemName} está ahora activo");
         }
+    }
+
+    public void UpdateEnergy(float energyDif)
+    {
+        energy += energyDif;
+        if (energy > maxEnergy) energy = maxEnergy;
+        else if (energy < 0) energy = 0;
+        slider.value = energy;
     }
 }

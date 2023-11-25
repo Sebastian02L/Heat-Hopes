@@ -13,7 +13,7 @@ public class Belt : Item
         bought = acquired;
         if (isActive && (Input.GetKeyDown(KeyCode.Mouse0)))
         {
-            UseAbility();
+            //UseAbility();
         }
     }
 
