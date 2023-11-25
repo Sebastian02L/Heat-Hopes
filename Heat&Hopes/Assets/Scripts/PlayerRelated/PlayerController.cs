@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("jumping", false);
         }
+        else
+        {
+            animator.SetBool("jumping", true);
+        }
     }
 
     private void MovementInput() //Esta funcion maneja el movimiento dependiendo de la tecla pulsada
@@ -73,8 +77,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Se aplica un impulso hacia arriba
             jump = false;
-
-            animator.SetBool("jumping", true);
         }
     }
 

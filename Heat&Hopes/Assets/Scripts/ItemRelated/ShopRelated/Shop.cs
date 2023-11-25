@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        pauseMenu = GameObject.Find("GUI").GetComponent<PauseMenu>();
+        pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
         shop.SetActive(false);
         confirmMenu.SetActive(false);
         returnMenu.SetActive(false);

@@ -11,6 +11,8 @@ public class Boots : Item
     private PlayerInventoryManager _inventory;
     private Rigidbody2D _playerRigidBody;
     private PauseMenu _pauseMenu;
+    private ParticleSystem _playerParticleSystem;
+    private ParticleSystem.EmissionModule _playerParticleSystemEmission;
 
     private bool _abilityKeyPressed = false;
 
@@ -22,7 +24,9 @@ public class Boots : Item
         _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         _inventory = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerInventoryManager>();
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
-        _pauseMenu = GameObject.Find("GUI").GetComponent<PauseMenu>();
+        _pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        _playerParticleSystem = GameObject.FindWithTag("Player").GetComponentInChildren<ParticleSystem>();
+        _playerParticleSystemEmission = _playerParticleSystem.emission;
     }
 
     private void Start()
@@ -45,6 +49,7 @@ public class Boots : Item
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 _abilityKeyPressed = false;
+                _playerParticleSystemEmission.enabled = false;
             }
         }
     }
@@ -59,6 +64,7 @@ public class Boots : Item
 
             if (_inventory.energy > 0.1) //Pequeña décima para que no empiece a volar directamente desde el suelo
             {
+                _playerParticleSystemEmission.enabled = true;
                 _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
             }
 
