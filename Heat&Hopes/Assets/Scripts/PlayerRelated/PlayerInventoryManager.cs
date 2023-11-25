@@ -25,7 +25,7 @@ public class PlayerInventoryManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        energy = maxEnergy;
+        energy = 0;
         slider = GameObject.Find("EnergyBar").GetComponent<Slider>();
     }
 

@@ -13,6 +13,7 @@ public class Boots : Item
     private PauseMenu _pauseMenu;
     private ParticleSystem _playerParticleSystem;
     private ParticleSystem.EmissionModule _playerParticleSystemEmission;
+    private RechargerPipe _rechargerPipe;
 
     private bool _abilityKeyPressed = false;
 
@@ -27,6 +28,7 @@ public class Boots : Item
         _pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
         _playerParticleSystem = GameObject.FindWithTag("Player").GetComponentInChildren<ParticleSystem>();
         _playerParticleSystemEmission = _playerParticleSystem.emission;
+        _rechargerPipe = GameObject.Find("Pipe").GetComponent<RechargerPipe>();
     }
 
     private void Start()
@@ -71,7 +73,7 @@ public class Boots : Item
             Debug.Log($"Habilidad de {itemName} en uso. Gastando energía...");
         }
 
-        if (_player.grounded == true) //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
+        if (_rechargerPipe.recharging) //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
         {
             _inventory.UpdateEnergy(Time.fixedDeltaTime);
         }
