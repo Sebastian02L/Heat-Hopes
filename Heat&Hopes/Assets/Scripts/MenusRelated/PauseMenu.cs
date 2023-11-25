@@ -6,13 +6,14 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public bool gameIsPaused = false;
+    public bool shopIsOpen = false; //Indica que la tienda está abierta para restringir el menú de pausa
 
     private bool _gameInPauseMenu = false;
     public GameObject pauseMenuUI;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !shopIsOpen)
         {
             if (gameIsPaused)
             {
