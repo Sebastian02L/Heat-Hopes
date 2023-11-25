@@ -177,6 +177,10 @@ MonoBehaviour:
     m_Key: Daltonismo_Modo
     m_Metadata:
       m_Items: []
+  - m_Id: 4585472196100096
+    m_Key: Dyslexia_Volver
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
