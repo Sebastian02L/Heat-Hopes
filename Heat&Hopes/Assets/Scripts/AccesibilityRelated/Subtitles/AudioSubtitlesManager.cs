@@ -19,8 +19,9 @@ public class AudioSubtitlesManager : MonoBehaviour
     public List<string> spanishSubstitleText;
     public List<string> englishSubstitleText;
 
-    //Referencia al cuadro de texto donde se desplegaran los subtitulos
+    //Referencia al cuadro de texto donde se desplegaran los subtitulos y su fondo
     public TextMeshProUGUI subtitlesBox;
+    public GameObject background;
 
     //Variable donde guardaremos el valor del Locale que define el idioma seleccionado
     private string actualLanguage;
@@ -35,7 +36,8 @@ public class AudioSubtitlesManager : MonoBehaviour
         {
             subtitlesAudioSource.clip = spanishAudioSources[key];
 
-        } else if(actualLanguage == "English (en)")   //si el idioma seleccionado es ingles
+        }
+        else if (actualLanguage == "English (en)")   //si el idioma seleccionado es ingles
         {
             subtitlesAudioSource.clip = englishAudioSources[key];
         }
@@ -44,7 +46,7 @@ public class AudioSubtitlesManager : MonoBehaviour
         subtitlesAudioSource.Play();
     }
 
-    //Metodo encargado mostrar por pantalla los subtitulos correspondientes al audio reproducido
+    //Metodo encargado mostrar por pantalla los subtitulos correspondientes al audio reproducido y su fondo
     public void showSubtitle(int key)
     {
         if (actualLanguage == "Spanish (es)")         //si el idioma seleccionado es español
@@ -56,14 +58,16 @@ public class AudioSubtitlesManager : MonoBehaviour
         {
             subtitlesBox.text = englishSubstitleText[key];
         }
+        background.SetActive(true);
     }
 
-    //Si no hay ningún audio reproduciendose, se elimina el texto
+    //Si no hay ningún audio reproduciendose, se elimina el texto y el fondo
     private void Update()
     {
         if (!subtitlesAudioSource.isPlaying)
         {
             subtitlesBox.text = "";
+            background.SetActive(false);
         }
     }
 }
@@ -78,4 +82,3 @@ public class AudioSubtitlesManager : MonoBehaviour
 //(todos tienen en comun su posicion en las listas, de manera que se reproduzca y muestre todo de forma correcta)
 //
 // 1. Todavia no está diseñado el soporte para audios más largos donde debes ir cambiando los subtitulos
-// 2. Todavia no compatible con los ajustes de idioma y texto, se hará cuando todas las interfaces estén en una sola escena
