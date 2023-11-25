@@ -3357,6 +3357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3190609897473660636, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8794261600445226918, guid: e26e862e759ec9948a481c8bbaf0fee8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -12103,7 +12107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6993261927104096668, guid: dccfaa830a11bae47974dab3e0970969, type: 3}
       propertyPath: m_Size.x
-      value: 82.825325
+      value: 76.922325
       objectReference: {fileID: 0}
     - target: {fileID: 6993261927104096668, guid: dccfaa830a11bae47974dab3e0970969, type: 3}
       propertyPath: m_Size.y
@@ -12115,7 +12119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007216801480474124, guid: dccfaa830a11bae47974dab3e0970969, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 238.285
+      value: 238.8753
       objectReference: {fileID: 0}
     - target: {fileID: 9007216801480474124, guid: dccfaa830a11bae47974dab3e0970969, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22574,7 +22578,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31
+    m_Bits: 95
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -24826,8 +24830,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167565327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.72, y: -23.19, z: -0.313207}
-  m_LocalScale: {x: 31.058434, y: 32.040714, z: 1}
+  m_LocalPosition: {x: -5.9663, y: -23.19, z: -0.313207}
+  m_LocalScale: {x: 32.564766, y: 32.040714, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 317918678}
@@ -35022,6 +35026,10 @@ PrefabInstance:
     - target: {fileID: 7351899456853337626, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351899456853337626, guid: 14cb249685059174386652fe29948688, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
