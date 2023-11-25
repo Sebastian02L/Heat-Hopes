@@ -94,7 +94,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4575406592114688
-    m_Localized: Settings
+    m_Localized: SETTINGS
     m_Metadata:
       m_Items: []
   - m_Id: 4575708015771648
@@ -122,7 +122,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4576439674355712
-    m_Localized: Controlls
+    m_Localized: Controls
     m_Metadata:
       m_Items: []
   - m_Id: 4576526655832064
@@ -138,7 +138,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4577415684702208
-    m_Localized: Controls
+    m_Localized: CONTROLS
     m_Metadata:
       m_Items: []
   - m_Id: 4577955869114368
