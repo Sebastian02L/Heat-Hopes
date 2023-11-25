@@ -15,10 +15,7 @@ public class Shop : MonoBehaviour
     private PlayerController player; //Jugador
     private PauseMenu pauseMenu; //Menú de pausa
     private bool onShopRange = false; //Booleano que indica si el jugador se encuentra al lado del punto de acceso a la tienda para poder acceder a ella
-
-    public bool confirmationEnabled = true; //Booleano que el jugador podrá alterar desactivando o activando las confirmaciones.
-                                            //No debe ir en este script, pero se programa la funcionalidad contando con él.
-    
+    public bool confirmationEnabled;
 
 
     // Start is called before the first frame update
@@ -41,6 +38,16 @@ public class Shop : MonoBehaviour
             if (onShopRange && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Keypad0))) ToggleAccessShop();
             if (onShopRange && pauseMenu.shopIsOpen && Input.GetKeyUp(KeyCode.Escape)) ToggleAccessShop(); //También se puede cerrar la tienda con ESC
         }
+
+        confirmationEnabled = pauseMenu.confirmationEnabled;
+        if (confirmationEnabled)
+        {
+            confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Desactivar confirmaciones";
+        }
+        else
+        {
+            confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Activar confirmaciones";
+        }
     }
 
     public void ToggleAccessShop() //Función que alterna la tienda: si el menú de la tienda está cerrado lo abre y si está abierto lo cierra
@@ -54,15 +61,7 @@ public class Shop : MonoBehaviour
 
     public void ToggleConfirmation() //Opción que habilita/deshabilita confirmaciones
     {
-        confirmationEnabled = !confirmationEnabled;
-        if (confirmationEnabled)
-        {
-            confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Desactivar confirmaciones";
-        }
-        else
-        {
-            confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Activar confirmaciones";
-        }
+        pauseMenu.ToggleConfirmation();
     }
 
     public void ToggleEnableAccess() //Cuando se ha confirmado una acción el jugador puede volver a abrir la tienda

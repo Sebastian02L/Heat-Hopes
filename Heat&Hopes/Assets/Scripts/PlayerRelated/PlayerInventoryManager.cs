@@ -125,7 +125,8 @@ public class PlayerInventoryManager : MonoBehaviour
     private void PreviousItem()
     {
         indexItem--;
-        if (indexItem < 0) indexItem = numItems - 1;
+        if (indexItem < 0 && numItems != 0) indexItem = numItems - 1;
+        else if (numItems == 0) indexItem = 0;
         ChangeActiveItem(indexItem);
     }
 

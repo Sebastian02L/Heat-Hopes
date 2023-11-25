@@ -7,6 +7,10 @@ public class PauseMenu : MonoBehaviour
 {
     public bool gameIsPaused = false;
     public bool shopIsOpen = false; //Indica que la tienda está abierta para restringir el menú de pausa
+    public bool confirmationEnabled = true; //Indica si las confirmaciones están activadas o no
+                                            //Se pone en este script para que sea más fácil acceder a él desde la tienda y puertas
+    [SerializeField] private GameObject confirmationEnabledButton;
+    [SerializeField] private GameObject confirmationDisabledButton;
 
     private bool _gameInPauseMenu = false;
     public GameObject pauseMenuUI;
@@ -54,5 +58,20 @@ public class PauseMenu : MonoBehaviour
     public void changePauseMenuStatus()
     {
         _gameInPauseMenu = !_gameInPauseMenu;
+    }
+
+    public void ToggleConfirmation()
+    {
+        confirmationEnabled = !confirmationEnabled;
+        if (confirmationEnabled)
+        {
+            confirmationEnabledButton.SetActive(true);
+            confirmationDisabledButton.SetActive(false);
+        }
+        else
+        {
+            confirmationEnabledButton.SetActive(false);
+            confirmationDisabledButton.SetActive(true);
+        }
     }
 }
