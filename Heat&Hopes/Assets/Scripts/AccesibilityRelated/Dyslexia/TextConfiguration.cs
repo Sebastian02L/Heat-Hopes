@@ -13,13 +13,14 @@ public class TextConfiguration : MonoBehaviour
     private TextMeshProUGUI text;
 
 
-    private void Awake()
+    private void Start()
     {
         //Se inicializan a cero el espaciado entre letras, palabras y lineas
         characterSpacing = 0;
         lineSpacing = 0;
 
         //Guardamos el componente TextMeshProUGUI y aplicamos los valores por defecto al texto
+
         text = gameObject.GetComponent<TextMeshProUGUI>();
         text.characterSpacing = characterSpacing;
         text.lineSpacing = lineSpacing;
@@ -30,6 +31,10 @@ public class TextConfiguration : MonoBehaviour
 
     public void updateText(float character, float fontSizeChange, float line)
     {
+        if (text == null)
+        {
+            text = gameObject.GetComponent<TextMeshProUGUI>();
+        }
         //Actualizamos los atributos del texto con los parametros recibidos
         text.characterSpacing = character;
         text.fontSize += fontSizeChange;

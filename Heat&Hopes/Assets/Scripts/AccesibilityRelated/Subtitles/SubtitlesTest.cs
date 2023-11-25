@@ -13,7 +13,7 @@ public class SubtitlesTest : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             subtitlesManager.setAudio(0);
         }

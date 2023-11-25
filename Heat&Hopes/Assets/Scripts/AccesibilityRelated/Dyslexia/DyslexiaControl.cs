@@ -20,7 +20,7 @@ public class DyslexiaControl : MonoBehaviour
     private float fontSizeChange = 0;       //Almacena el numero que debera sumarse a la fuente de todos los textos al pulsar "Confirmar"
     private float minFontTestText = 20;     //Almacena el valor minimo para el texto de referencia
     private float maxFontTestText = 28;     //Almacena el valor máximo para el texto de referencia
-
+    List<GameObject> textList;
     public GameObject textContainer;
  
     private void Awake()
@@ -113,7 +113,10 @@ public class DyslexiaControl : MonoBehaviour
     public void confirmChanges()
     {
         //Lista auxiliar que recibe la lista de textos
-        List<GameObject> textList = textContainer.GetComponent<TextContainer>().getList();
+        if (textList == null)
+        {
+            textList = textContainer.GetComponent<TextContainer>().getList();
+        }
 
         foreach(GameObject textConfiguration in textList)
         {
