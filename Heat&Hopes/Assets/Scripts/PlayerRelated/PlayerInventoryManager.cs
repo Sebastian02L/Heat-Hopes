@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Newtonsoft.Json.Bson;
 
 public class PlayerInventoryManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerInventoryManager : MonoBehaviour
     //Ítems:                                               
     private PlayerController player;
     public Item[] items = new Item[5]; //Array de ítems del jugador
+    private int indexItem = 0; //Índice de ítem que está activo
     private int numItems = 0; //Número de ítems que el jugador tiene actualmente
     private Item currentItem; //Ítem seleccionado por el jugador
     //Energía:
@@ -38,6 +40,7 @@ public class PlayerInventoryManager : MonoBehaviour
 
     private void CheckInput()
     {
+        //Con teclado:
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ChangeActiveItem(0);
@@ -58,6 +61,10 @@ public class PlayerInventoryManager : MonoBehaviour
         {
             ChangeActiveItem(4);
         }
+        //Con ratón:
+        float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
+        if (mouseWheel > 0) NextItem();
+        else if (mouseWheel < 0) PreviousItem();
     }
 
     public void AddMoney(float moneyToAdd)
@@ -103,8 +110,23 @@ public class PlayerInventoryManager : MonoBehaviour
             if(currentItem != null) Debug.Log($"{currentItem.itemName} ha dejado de estar activo");
             currentItem = items[index];
             currentItem.isActive = true;
+            indexItem = index;
             Debug.Log($"{currentItem.itemName} está ahora activo");
         }
+    }
+
+    private void NextItem()
+    {
+        indexItem++;
+        if (indexItem > numItems - 1) indexItem = 0;
+        ChangeActiveItem(indexItem);
+    }
+
+    private void PreviousItem()
+    {
+        indexItem--;
+        if (indexItem < 0) indexItem = numItems - 1;
+        ChangeActiveItem(indexItem);
     }
 
     public void UpdateEnergy(float energyDif)
