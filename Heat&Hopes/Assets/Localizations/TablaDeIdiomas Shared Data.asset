@@ -67,6 +67,116 @@ MonoBehaviour:
     m_Key: puertaConfirmar
     m_Metadata:
       m_Items: []
+  - m_Id: 4574519865917440
+    m_Key: Pausa_Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4574746026983424
+    m_Key: Pausa_Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575027334758400
+    m_Key: Pausa_Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575406592114688
+    m_Key: Opciones_Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575708015771648
+    m_Key: Opciones_Volumen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575770334740480
+    m_Key: 'Opciones_General
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575845786075136
+    m_Key: Opciones_Musica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575898768523264
+    m_Key: Opciones_Efectos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576104503328768
+    m_Key: Opciones_Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576280710234112
+    m_Key: Opciones_Brillo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576439674355712
+    m_Key: Opciones_Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576526655832064
+    m_Key: Opciones_VerControles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576766653906944
+    m_Key: Opciones_Accesibilidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4577167042166784
+    m_Key: Opciones_VerAccesibilidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4577415684702208
+    m_Key: Controles_Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4577955869114368
+    m_Key: Controles_Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578080666435584
+    m_Key: Controles_Derecha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578141810999296
+    m_Key: Controles_Izquierda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578207955173376
+    m_Key: Controles_Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578379623841792
+    m_Key: Controles_Habilidad1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578466232025088
+    m_Key: Controles_Habilidad2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578556359229440
+    m_Key: Controles_Interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578747648851968
+    m_Key: AccesibilidadMenu_Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4579113962586112
+    m_Key: AccesibilidadMenu_Dislexia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4580063095832576
+    m_Key: AccesibilidadMenu_Daltonismo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4580305874731008
+    m_Key: Daltonismo_Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4580890917224448
+    m_Key: Daltonismo_Modo
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

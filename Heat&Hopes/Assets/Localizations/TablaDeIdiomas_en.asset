@@ -81,6 +81,114 @@ MonoBehaviour:
     m_Localized: Are you sure?
     m_Metadata:
       m_Items: []
+  - m_Id: 4574519865917440
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4574746026983424
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575027334758400
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575406592114688
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575708015771648
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575770334740480
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575845786075136
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4575898768523264
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576104503328768
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576280710234112
+    m_Localized: Brightness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576439674355712
+    m_Localized: Controlls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576526655832064
+    m_Localized: View controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4576766653906944
+    m_Localized: Accessibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4577167042166784
+    m_Localized: View accessibility settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4577415684702208
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4577955869114368
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578080666435584
+    m_Localized: Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578141810999296
+    m_Localized: Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578207955173376
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578379623841792
+    m_Localized: Ability 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578466232025088
+    m_Localized: Ability 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578556359229440
+    m_Localized: Interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4578747648851968
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4579113962586112
+    m_Localized: Language and dyslexia settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4580063095832576
+    m_Localized: Daltonism settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4580305874731008
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4580890917224448
+    m_Localized: Daltonism mode
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
