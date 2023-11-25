@@ -8,6 +8,7 @@ public class Behaviour : MonoBehaviour
     // Start is called before the first frame update
 
     public int rutine;
+    SpriteRenderer sprite;
 
     //Atributos para controlar el movimiento:
     public float speedWalk;
@@ -24,6 +25,10 @@ public class Behaviour : MonoBehaviour
     //Atributos para atacar al jugador:
     public bool attacking;
 
+   private void Start() { 
+        sprite=transform.GetComponent<SpriteRenderer>();    
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -39,10 +44,12 @@ public class Behaviour : MonoBehaviour
             //Movimiento del enemigo.
             if (isRight == true)
             {
+                sprite.flipX = false;
                 transform.position += Vector3.right * speedWalk * Time.fixedDeltaTime;
             }
             else
             {
+                sprite.flipX=true;
                 transform.position += Vector3.left * speedWalk * Time.fixedDeltaTime;
             }
 
@@ -63,11 +70,13 @@ public class Behaviour : MonoBehaviour
 
                 if (transform.position.x < target.transform.position.x)
                 { //El jugador se encuentra a la derecha
+                    sprite.flipX = false;
                     transform.Translate(Vector3.right * speedRun * Time.fixedDeltaTime);
                     
                 }
                 else
                 {//El jugador se encuentra a la izquierda
+                    sprite.flipX = true;
                     transform.Translate(Vector3.left * speedRun * Time.fixedDeltaTime);
                     
                 }
