@@ -2595,7 +2595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &118271263
 Transform:
   m_ObjectHideFlags: 0
@@ -22594,7 +22594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002579522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.61, y: -3.68, z: -10}
+  m_LocalPosition: {x: 227.4, y: -45.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34871,7 +34871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1732998388
 Transform:
   m_ObjectHideFlags: 0
@@ -34957,11 +34957,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.61
+      value: 227.4
       objectReference: {fileID: 0}
     - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.68
+      value: -45.9
       objectReference: {fileID: 0}
     - target: {fileID: 844472832402431206, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34999,30 +34999,26 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 559222346}
-    - target: {fileID: 3928129546695130245, guid: 14cb249685059174386652fe29948688, type: 3}
-      propertyPath: cosas.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3928129546695130245, guid: 14cb249685059174386652fe29948688, type: 3}
+    - target: {fileID: 5167998424831134245, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: cosas.Array.data[0]
       value: 
       objectReference: {fileID: 25042966}
-    - target: {fileID: 3928129546695130245, guid: 14cb249685059174386652fe29948688, type: 3}
+    - target: {fileID: 5167998424831134245, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: cosas.Array.data[1]
       value: 
       objectReference: {fileID: 1396899338}
-    - target: {fileID: 3928129546695130245, guid: 14cb249685059174386652fe29948688, type: 3}
+    - target: {fileID: 5167998424831134245, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: cosas.Array.data[2]
       value: 
       objectReference: {fileID: 248816199}
-    - target: {fileID: 3928129546695130245, guid: 14cb249685059174386652fe29948688, type: 3}
+    - target: {fileID: 5167998424831134245, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: cosas.Array.data[3]
       value: 
-      objectReference: {fileID: 118271262}
-    - target: {fileID: 3928129546695130245, guid: 14cb249685059174386652fe29948688, type: 3}
+      objectReference: {fileID: 1732998387}
+    - target: {fileID: 5167998424831134245, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: cosas.Array.data[4]
       value: 
-      objectReference: {fileID: 1732998387}
+      objectReference: {fileID: 118271262}
     - target: {fileID: 7351899456853337626, guid: 14cb249685059174386652fe29948688, type: 3}
       propertyPath: m_Name
       value: Player
