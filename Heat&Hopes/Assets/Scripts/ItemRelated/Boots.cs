@@ -8,7 +8,7 @@ public class Boots : Item
 {
     private float _maxEnergy = 2f;
     private float _currEnergy;
-    private float _thrustForce = 0.1f;
+    private float _thrustForce = 1f;
 
     private PlayerController _player;
     private Rigidbody2D _playerRigidBody;
@@ -51,12 +51,15 @@ public class Boots : Item
                 _abilityKeyPressed = false;
             }
         }
+    }
 
+    private void FixedUpdate()
+    {
         if (isActive && _abilityKeyPressed && _currEnergy > 0 && _player.canMove)
         {
             used = true;
 
-            _currEnergy -= Time.deltaTime;
+            _currEnergy -= Time.fixedDeltaTime;
             _slider.value = _currEnergy;
 
             if (_currEnergy > 0.1)
@@ -66,18 +69,18 @@ public class Boots : Item
 
             Debug.Log($"Habilidad de {itemName} en uso. Gastando energía...");
         }
-        else if (_abilityKeyPressed && _currEnergy <= 0) 
+        else if (_abilityKeyPressed && _currEnergy <= 0)
         {
             _currEnergy = 0;
             _slider.value = _currEnergy;
             Debug.Log("Sin energía");
         }
 
-        if(_player.grounded == true) //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
+        if (_player.grounded == true) //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
         {
             if (_currEnergy < _maxEnergy)
             {
-                _currEnergy += Time.deltaTime;
+                _currEnergy += Time.fixedDeltaTime;
                 _slider.value = _currEnergy;
                 Debug.Log("Recargando Energía");
             }
