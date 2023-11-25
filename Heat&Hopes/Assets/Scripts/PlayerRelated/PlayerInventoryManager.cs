@@ -19,7 +19,8 @@ public class PlayerInventoryManager : MonoBehaviour
     //Energía:
     public float energy;
     private float maxEnergy = 2f;
-    private Slider slider; 
+    private Slider slider;
+    private RechargerPipe _rechargerPipe;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PlayerInventoryManager : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         energy = 0;
         slider = GameObject.Find("EnergyBar").GetComponent<Slider>();
+        _rechargerPipe = GameObject.Find("Pipe").GetComponent<RechargerPipe>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,14 @@ public class PlayerInventoryManager : MonoBehaviour
         if (player.canMove)
         {
             CheckInput();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (_rechargerPipe.recharging)
+        {
+            this.UpdateEnergy(Time.fixedDeltaTime);
         }
     }
 

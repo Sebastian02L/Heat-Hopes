@@ -13,7 +13,6 @@ public class Boots : Item
     private PauseMenu _pauseMenu;
     private ParticleSystem _playerParticleSystem;
     private ParticleSystem.EmissionModule _playerParticleSystemEmission;
-    private RechargerPipe _rechargerPipe;
 
     private bool _abilityKeyPressed = false;
 
@@ -28,7 +27,6 @@ public class Boots : Item
         _pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
         _playerParticleSystem = GameObject.FindWithTag("Player").GetComponentInChildren<ParticleSystem>();
         _playerParticleSystemEmission = _playerParticleSystem.emission;
-        _rechargerPipe = GameObject.Find("Pipe").GetComponent<RechargerPipe>();
     }
 
     private void Start()
@@ -51,8 +49,12 @@ public class Boots : Item
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 _abilityKeyPressed = false;
-                _playerParticleSystemEmission.enabled = false;
             }
+        }
+
+        if(_inventory.energy == 0 || Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            _playerParticleSystemEmission.enabled = false;
         }
     }
 
@@ -64,18 +66,10 @@ public class Boots : Item
 
             _inventory.UpdateEnergy(-Time.fixedDeltaTime);
 
-            if (_inventory.energy > 0.1) //Pequeña décima para que no empiece a volar directamente desde el suelo
-            {
-                _playerParticleSystemEmission.enabled = true;
-                _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
-            }
+            _playerParticleSystemEmission.enabled = true;
+            _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
 
             Debug.Log($"Habilidad de {itemName} en uso. Gastando energía...");
-        }
-
-        if (_rechargerPipe.recharging) //Creo que esto no debería ir aquí ya que la energía se consigue explorando el mundo
-        {
-            _inventory.UpdateEnergy(Time.fixedDeltaTime);
         }
     }
 
