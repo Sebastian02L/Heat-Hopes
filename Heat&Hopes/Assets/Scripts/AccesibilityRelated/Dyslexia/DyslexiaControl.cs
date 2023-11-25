@@ -18,7 +18,7 @@ public class DyslexiaControl : MonoBehaviour
 
     //Variables auxiliares para el manejo del cambio de el tamaño de la letra
     private float fontSizeChange = 0;       //Almacena el numero que debera sumarse a la fuente de todos los textos al pulsar "Confirmar"
-    private float minFontTestText = 20;     //Almacena el valor minimo para el texto de referencia
+    private float minFontTestText = 22;     //Almacena el valor minimo para el texto de referencia
     private float maxFontTestText = 28;     //Almacena el valor máximo para el texto de referencia
     List<GameObject> textList;
     public GameObject textContainer;
@@ -39,19 +39,19 @@ public class DyslexiaControl : MonoBehaviour
                 text.characterSpacing = sliderFloat;
                 break;
             case 1:
-                text.characterSpacing = sliderFloat + 2;
+                text.characterSpacing = sliderFloat + 1;
                 break;
             case 2:
-                text.characterSpacing = sliderFloat + 4;
+                text.characterSpacing = sliderFloat + 2;
                 break;
             case 3:
-                text.characterSpacing = sliderFloat + 6;
+                text.characterSpacing = sliderFloat + 3;
                 break;
             case 4:
-                text.characterSpacing = sliderFloat + 6;
+                text.characterSpacing = sliderFloat + 4;
                 break;
             case 5:
-                text.characterSpacing = sliderFloat + 7;
+                text.characterSpacing = sliderFloat + 5;
                 break;
         }
     }
@@ -72,7 +72,7 @@ public class DyslexiaControl : MonoBehaviour
     //Al pulsar el boton Aa-, disminuye en 1 el tamaño de la fuente de referencia. El tope es el valor 20
     public void changeFontSizeSmaller(float buttomFloat)
     {
-        if (text.fontSize == 20)
+        if (text.fontSize == 22)
         {
             text.fontSize += 0;
         }
@@ -92,19 +92,19 @@ public class DyslexiaControl : MonoBehaviour
                 text.lineSpacing = sliderFloat;
                 break;
             case 1:
-                text.lineSpacing = sliderFloat + 2;
+                text.lineSpacing = sliderFloat + 1;
                 break;
             case 2:
-                text.lineSpacing = sliderFloat + 4;
+                text.lineSpacing = sliderFloat + 2;
                 break;
             case 3:
-                text.lineSpacing = sliderFloat + 6;
+                text.lineSpacing = sliderFloat + 3;
                 break;
             case 4:
-                text.lineSpacing = sliderFloat + 6;
+                text.lineSpacing = sliderFloat + 4;
                 break;
             case 5:
-                text.lineSpacing = sliderFloat + 7;
+                text.lineSpacing = sliderFloat + 5;
                 break;
         }
     }
@@ -124,7 +124,7 @@ public class DyslexiaControl : MonoBehaviour
         }
         //El tamaño del texto de referencia se pasará de sus limites luego de esta llamada (porque se aplica dos veces), por lo tanto
         //Si el tamaño del texto es < 20, asignamos su valor mínimo, para que no se pueda seguir reduciendo su tamaño
-        if(text.fontSize < 20)
+        if(text.fontSize < 22)
         {
             text.fontSize = minFontTestText;
         } 

@@ -8,9 +8,10 @@ using UnityEngine.UI;
 public class TextConfiguration : MonoBehaviour
 {
     //Variables de la clase
-    private float characterSpacing;         
+    private float characterSpacing;
     private float lineSpacing;
     private TextMeshProUGUI text;
+    private TextMeshPro text2;
 
 
     private void Start()
@@ -19,14 +20,22 @@ public class TextConfiguration : MonoBehaviour
         characterSpacing = 0;
         lineSpacing = 0;
 
-        //Guardamos el componente TextMeshProUGUI y aplicamos los valores por defecto al texto
+        //Guardamos el componente TextMeshProUGUI o TextMeshPro y aplicamos los valores por defecto al texto
 
         text = gameObject.GetComponent<TextMeshProUGUI>();
-        text.characterSpacing = characterSpacing;
-        text.lineSpacing = lineSpacing;
+        text2 = gameObject.GetComponent<TextMeshPro>();
 
-        //Agregamos la instancia a la lista de textos de la clase TextContainer (un gameObject está en la jerarquia guardando los textos)
-        //GameObject.Find("TextManager").GetComponent<TextContainer>().addToList(this);
+        if (text != null)
+        {
+            text.characterSpacing = characterSpacing;
+            text.lineSpacing = lineSpacing;
+        }
+        else
+        {
+            text2.characterSpacing = characterSpacing;
+            text2.lineSpacing = lineSpacing;
+        }
+
     }
 
     public void updateText(float character, float fontSizeChange, float line)
@@ -34,11 +43,26 @@ public class TextConfiguration : MonoBehaviour
         if (text == null)
         {
             text = gameObject.GetComponent<TextMeshProUGUI>();
+
+            //Si text sigue siendo nulo, quiere decir que no tiene TextMeshProGUI, entonces tendrá un TextMeshPro
+            if (text == null)
+            {
+                text2 = gameObject.GetComponent<TextMeshPro>();
+            }
         }
         //Actualizamos los atributos del texto con los parametros recibidos
-        text.characterSpacing = character;
-        text.fontSize += fontSizeChange;
-        text.lineSpacing = line;
+        if (text != null)
+        {
+            text.characterSpacing = character;
+            text.fontSize += fontSizeChange;
+            text.lineSpacing = line;
+        }
+        else
+        {
+            text2.characterSpacing = character;
+            text2.fontSize += (fontSizeChange / 16);
+            text2.lineSpacing = line;
+        }
     }
 
 }
