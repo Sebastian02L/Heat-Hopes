@@ -11,9 +11,16 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     private bool jump = false; //Bool que indica si el personaje salta o no
+
+    private Animator animator;
+
+    private SpriteRenderer playerSprite;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); //Conseguimos la referencia
+        playerSprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -24,6 +31,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if(canMove) JumpInput();
+
+        if (grounded)
+        {
+            animator.SetBool("jumping", false);
+        }
     }
 
     private void MovementInput() //Esta funcion maneja el movimiento dependiendo de la tecla pulsada
@@ -32,21 +44,37 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            playerSprite.flipX = true;
+
+            if (grounded)
+            {
+                animator.SetBool("walking", true);
+            }
         }
         //movimiento izquierda
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            playerSprite.flipX = false;
+
+            if (grounded)
+            {
+                animator.SetBool("walking", true);
+            }
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+
+            animator.SetBool("walking", false);
         }
         //salto
         if (jump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Se aplica un impulso hacia arriba
             jump = false;
+
+            animator.SetBool("jumping", true);
         }
     }
 
