@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.VisualScripting.Icons;
 using UnityEngine.Localization.Settings;
 
 public class Belt : Item
