@@ -42,6 +42,7 @@ public class AudioSubtitlesManager : MonoBehaviour
             subtitlesAudioSource.clip = englishAudioSources[key];
         }
 
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().canMove = false;
         showSubtitle(key);
         subtitlesAudioSource.Play();
     }
@@ -68,6 +69,7 @@ public class AudioSubtitlesManager : MonoBehaviour
         {
             subtitlesBox.text = "";
             background.SetActive(false);
+            GameObject.FindWithTag("Player").GetComponent<PlayerController>().canMove = true;
         }
     }
 }
