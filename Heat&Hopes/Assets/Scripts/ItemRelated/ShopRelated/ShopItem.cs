@@ -92,7 +92,7 @@ public class ShopItem : MonoBehaviour
             {
                 shop.ToggleEnableAccess(); //Mientras esté desplegado el menú de confirmación la tienda no se puede abrir la tienda de nuevo para evitar bugs
                 if (language == "Spanish (es)") confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea comprar '{itemToBuy.itemName}'? Podrá devolverlo si no lo usa.";
-                else confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"Are you sure that you want to buy '{itemToBuy.itemName}'? You can return it if you don't use it.";
+                else confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"Are you sure that you want to buy '{itemToBuy.itemName}'? You can return it later if you don't use it.";
                 shopMenu.SetActive(false);
                 confirmMenu.SetActive(true);
             }
@@ -118,7 +118,9 @@ public class ShopItem : MonoBehaviour
         } 
         else if(!item.bought && playerInventory.money < item.cost) //Si no se puede comprar a falta de dinero se muestra que el jugador es pobre
         {
-            advisoryText.text = "¡Dinero insuficiente!";
+            if (language == "Spanish (es)") advisoryText.text = "¡Dinero insuficiente!";
+            else advisoryText.text = "Not enough money!";
+
             StartCoroutine(ShowAdvisoryText());
         }
     }
@@ -128,7 +130,8 @@ public class ShopItem : MonoBehaviour
         itemToBuy.ItemBought(true);
         playerInventory.AddItem(itemToBuy);
         playerInventory.AddMoney(-itemToBuy.cost);
-        advisoryText.text = $"{itemToBuy.itemName} añadido al inventario con éxito.";
+        if (language == "Spanish (es)") advisoryText.text = $"{itemToBuy.itemName} añadido al inventario con éxito.";
+        else advisoryText.text = $"{itemToBuy.itemName} Successfully added to inventory."; 
         buySound.Play();
         StartCoroutine(ShowAdvisoryText());
     }
@@ -138,7 +141,8 @@ public class ShopItem : MonoBehaviour
         itemToBuy.ItemBought(false);
         playerInventory.RemoveItem(itemToBuy);
         playerInventory.AddMoney(itemToBuy.cost);
-        advisoryText.text = $"{itemToBuy.itemName} devuelto con éxito.";
+        if (language == "Spanish (es)") advisoryText.text = $"{itemToBuy.itemName} devuelto con éxito.";
+        else advisoryText.text = $"{itemToBuy.itemName} Successfully removed from inventory.";
         StartCoroutine(ShowAdvisoryText());
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class Shop : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Shop : MonoBehaviour
     private bool onShopRange = false; //Booleano que indica si el jugador se encuentra al lado del punto de acceso a la tienda para poder acceder a ella
     public bool confirmationEnabled;
     public AudioSource enterOutSound;
+    private string language;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        language = LocalizationSettings.SelectedLocale.LocaleName;
         if (!pauseMenu.gameIsPaused)
         {
             if (onShopRange && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Keypad0))) ToggleAccessShop();
@@ -42,11 +45,13 @@ public class Shop : MonoBehaviour
         confirmationEnabled = pauseMenu.confirmationEnabled;
         if (confirmationEnabled)
         {
-            confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Desactivar confirmaciones";
+            if (language == "Spanish (es)") confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Desactivar confirmaciones";
+            else confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Disable confirmations";
         }
         else
         {
-            confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Activar confirmaciones";
+            if (language == "Spanish (es)") confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Activar confirmaciones";
+            else confirmationButton.GetComponentInChildren<TextMeshProUGUI>().text = "Enable confirmations";
         }
     }
 

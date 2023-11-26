@@ -11,7 +11,7 @@ public class HydrogenProcessor : Item
     {
         spanishName = "Procesador de hidrógeno";
         spanishDescription = "Mientras está activo convierte lentamente hidrógeno sin procesar en hidrógeno procesado.";
-        englishName = "HydrogenProcessor";
+        englishName = "Hydrogen Processor";
         englishDescription = "Will convert raw hydrogen to processed hydrogen while active.";
     }
 

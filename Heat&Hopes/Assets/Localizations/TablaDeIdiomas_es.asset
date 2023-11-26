@@ -199,6 +199,10 @@ MonoBehaviour:
     m_Localized: "Confirmaci\xF3n de acciones desactivada"
     m_Metadata:
       m_Items: []
+  - m_Id: 5055321042071552
+    m_Localized: "S\xED"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

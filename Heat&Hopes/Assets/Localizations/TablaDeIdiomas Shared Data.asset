@@ -189,6 +189,10 @@ MonoBehaviour:
     m_Key: "Confirmaci\xF3n_Bot\xF3n2"
     m_Metadata:
       m_Items: []
+  - m_Id: 5055321042071552
+    m_Key: Boton_si
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
