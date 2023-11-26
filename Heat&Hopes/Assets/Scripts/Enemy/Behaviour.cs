@@ -73,7 +73,8 @@ public class Behaviour : MonoBehaviour
             
         }
 
-        else {
+        else if (Mathf.Abs(transform.position.y - target.transform.position.y) < visionRange)
+        {
             if (Mathf.Abs(transform.position.x - target.transform.position.x) > attackRange)
             { //Si ha visto al jugador pero no esta en rango de ataque entonces se debe acercar
 
