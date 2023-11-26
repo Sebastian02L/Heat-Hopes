@@ -41,7 +41,7 @@ public class MoneyActivable : MonoBehaviour
         {
             confirming = false;
         }
-        onRangeIndicator.SetActive(onRange && !notEnoughtMoneyIndicator.activeSelf && !useConfirmation.activeSelf);
+        onRangeIndicator.SetActive(onRange && !notEnoughtMoneyIndicator.activeSelf && !useConfirmation.activeSelf &&!used);
         useConfirmation.SetActive(confirming);
         if (onRange && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Keypad0)) && !used) 
         {
@@ -74,10 +74,14 @@ public class MoneyActivable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) //El gameObject necesita un Collider Trigger para funcionar
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!used)
         {
-            onRange = true;
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                onRange = true;
+            }
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision) //El gameObject necesita un Collider Trigger para funcionar
@@ -90,7 +94,10 @@ public class MoneyActivable : MonoBehaviour
 
     protected virtual void Use() //Los scripts que hereden de este tendrán que implementar lo que harán al activarse
     {
-        moneyManager.AddMoney(-price);
+        if (!used)
+        {
+            moneyManager.AddMoney(-price);
+        }
         if (onlyOnce)
         {
             used = true;

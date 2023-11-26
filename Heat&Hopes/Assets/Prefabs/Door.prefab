@@ -500,7 +500,7 @@ MonoBehaviour:
   onRange: 0
   confirming: 0
   price: 0
-  onlyOnce: 0
+  onlyOnce: 1
   used: 0
   timeToDestroy: 1.5
   openSound: {fileID: 643334869111733023}
