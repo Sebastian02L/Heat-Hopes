@@ -156,11 +156,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4578379623841792
-    m_Localized: Habilidad 1
+    m_Localized: Habilidad
     m_Metadata:
       m_Items: []
   - m_Id: 4578466232025088
-    m_Localized: Habilidad 2
+    m_Localized: Seleccionar habilidad
     m_Metadata:
       m_Items: []
   - m_Id: 4578556359229440

@@ -8,6 +8,8 @@ using UnityEngine.Localization.Settings;
 //Encargada de reproducir los audios y de mostar los subtitulos
 public class AudioSubtitlesManager : MonoBehaviour
 {
+    private bool audioEnded = true;
+
     //Referencia al audio source
     public AudioSource subtitlesAudioSource;
 
@@ -42,6 +44,7 @@ public class AudioSubtitlesManager : MonoBehaviour
             subtitlesAudioSource.clip = englishAudioSources[key];
         }
 
+        audioEnded = false;
         GameObject.FindWithTag("Player").GetComponent<PlayerController>().canMove = false;
         showSubtitle(key);
         subtitlesAudioSource.Play();
@@ -65,8 +68,9 @@ public class AudioSubtitlesManager : MonoBehaviour
     //Si no hay ningún audio reproduciendose, se elimina el texto y el fondo
     private void Update()
     {
-        if (!subtitlesAudioSource.isPlaying)
+        if (!subtitlesAudioSource.isPlaying && !audioEnded)
         {
+            audioEnded = true;
             subtitlesBox.text = "";
             background.SetActive(false);
             GameObject.FindWithTag("Player").GetComponent<PlayerController>().canMove = true;

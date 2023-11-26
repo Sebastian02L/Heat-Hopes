@@ -146,11 +146,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4578379623841792
-    m_Key: Controles_Habilidad1
+    m_Key: Controles_Habilidad
     m_Metadata:
       m_Items: []
   - m_Id: 4578466232025088
-    m_Key: Controles_Habilidad2
+    m_Key: Controles_SeleccionarHabilidad
     m_Metadata:
       m_Items: []
   - m_Id: 4578556359229440
