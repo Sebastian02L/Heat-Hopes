@@ -502,7 +502,7 @@ MonoBehaviour:
   price: 0
   onlyOnce: 0
   used: 0
-  timeToDestroy: 2
+  timeToDestroy: 1.5
   openSound: {fileID: 643334869111733023}
   priceText: {fileID: 4321318829391511845}
 --- !u!61 &3237937635254490420

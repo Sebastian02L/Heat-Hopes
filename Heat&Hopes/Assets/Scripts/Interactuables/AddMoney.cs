@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AddMoney : MonoBehaviour
@@ -21,6 +22,7 @@ public class AddMoney : MonoBehaviour
             Debug.Log("Dinero recogido");
             other.gameObject.GetComponentInChildren<PlayerInventoryManager>().AddMoney(value);
              added = !added;
+                Destroy(gameObject, 3);
             }
         }
     }
