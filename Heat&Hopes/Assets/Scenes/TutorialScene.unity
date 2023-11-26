@@ -13890,7 +13890,7 @@ GameObject:
   - component: {fileID: 549466099}
   - component: {fileID: 549466098}
   m_Layer: 0
-  m_Name: Dialog_1 (5)
+  m_Name: Dialog_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13955,7 +13955,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.42728013, y: 2.1073847}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 4
 --- !u!114 &549466099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19976,7 +19976,7 @@ GameObject:
   - component: {fileID: 801491347}
   - component: {fileID: 801491346}
   m_Layer: 0
-  m_Name: Dialog_1 (4)
+  m_Name: Dialog_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20041,7 +20041,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.42728013, y: 2.1073847}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 3
 --- !u!114 &801491347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30478,7 +30478,7 @@ GameObject:
   - component: {fileID: 1231395334}
   - component: {fileID: 1231395333}
   m_Layer: 0
-  m_Name: Dialog_1 (3)
+  m_Name: Dialog_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30543,7 +30543,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.42728013, y: 2.1073847}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 2
 --- !u!114 &1231395334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32137,7 +32137,7 @@ GameObject:
   - component: {fileID: 1305469577}
   - component: {fileID: 1305469576}
   m_Layer: 0
-  m_Name: Dialog_1
+  m_Name: Dialog_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32151,7 +32151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305469574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -436.4, y: -347.35, z: -1.0755091}
+  m_LocalPosition: {x: -434.91, y: -347.35, z: -1.0755091}
   m_LocalScale: {x: 3.3875, y: 2.4375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32850,7 +32850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.000061035156}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1346391049 stripped
@@ -33804,7 +33804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1389606465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35591,9 +35591,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitlesAudioSource: {fileID: 217039654}
   spanishAudioSources:
-  - {fileID: 8300000, guid: b9c9d615e91becf4398a673846b99a55, type: 3}
+  - {fileID: 8300000, guid: 8acc96e021e0a8d4cb0d0f432a13950e, type: 3}
+  - {fileID: 8300000, guid: e3454121306ce6f49817ea9d5dc4f961, type: 3}
+  - {fileID: 8300000, guid: fe839f398a4029d44a34a23854a0633a, type: 3}
+  - {fileID: 8300000, guid: ec48abbbf9693594298d1860017ea734, type: 3}
+  - {fileID: 8300000, guid: 1ec7b32a9ec8298428bc7cf657ca3a11, type: 3}
   englishAudioSources:
-  - {fileID: 8300000, guid: be52b7129ec57634da3c8b2c4c322e7e, type: 3}
+  - {fileID: 8300000, guid: 9d2544205103a01488fc2e34844be412, type: 3}
+  - {fileID: 8300000, guid: db302c49eaa8bcf40bdcdfbbf1d89f48, type: 3}
+  - {fileID: 8300000, guid: 0cc7a9c3070e9034dbc555baee3e31e3, type: 3}
+  - {fileID: 8300000, guid: e2281f9501b5a13438ac7ae2eaa1e9b2, type: 3}
+  - {fileID: 8300000, guid: 866fb1753189dda44a27bca1ea4391a8, type: 3}
   spanishSubstitleText:
   - "Heat, ahora que he abierto tu celda, puedes escapar de este mont\xF3n de chatarra.
     Te ayudar\xE9 por el camino, asi que buena suerte."
@@ -36118,7 +36126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1506305773
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36128,7 +36136,7 @@ RectTransform:
   m_GameObject: {fileID: 1506305772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 63.73}
-  m_LocalScale: {x: 2080.8542, y: 161.32999, z: 18}
+  m_LocalScale: {x: 2080.8542, y: 274.51306, z: 18}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 835511198}
@@ -36136,7 +36144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -138}
+  m_AnchoredPosition: {x: 0, y: -176}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1506305774
@@ -36956,7 +36964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1560121636
 Transform:
   m_ObjectHideFlags: 0
@@ -38022,7 +38030,7 @@ GameObject:
   - component: {fileID: 1606523407}
   - component: {fileID: 1606523406}
   m_Layer: 0
-  m_Name: Dialog_1 (2)
+  m_Name: Dialog_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38087,7 +38095,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.42728013, y: 3.188552}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 1
 --- !u!114 &1606523407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41763,7 +41771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.00012207031, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1772445567 stripped
@@ -42949,7 +42957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.000061035156}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798466047
