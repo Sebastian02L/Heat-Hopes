@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         //salto
         if (jump)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Se aplica un impulso hacia arriba
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //Se aplica un impulso hacia arriba
             jump = false;
         }
     }

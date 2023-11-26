@@ -14,7 +14,7 @@ public class DoorController : MoneyActivable //Hereda de MoneyActivable
     {
         MoneyStart();
         animator = GetComponent<Animator>();
-        priceText.text = $"{price} HV";
+        priceText.text = $"{price}";
     }
     private void Update()
     {

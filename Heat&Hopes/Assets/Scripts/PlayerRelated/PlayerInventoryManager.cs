@@ -18,7 +18,7 @@ public class PlayerInventoryManager : MonoBehaviour
     private Item currentItem; //Ítem seleccionado por el jugador
     //Energía:
     public float energy;
-    private float maxEnergy = 2f;
+    public float maxEnergy = 2f;
     private Slider slider;
 
     // Start is called before the first frame update

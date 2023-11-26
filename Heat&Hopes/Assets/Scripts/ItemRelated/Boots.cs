@@ -28,12 +28,7 @@ public class Boots : Item
         _playerParticleSystem = GameObject.FindWithTag("Player").GetComponentInChildren<ParticleSystem>();
         _playerParticleSystemEmission = _playerParticleSystem.emission;
     }
-
-    private void Start()
-    {
-
-    }
-
+    
     private void Update()
     {
         hasBeenUsed = used;
@@ -41,18 +36,18 @@ public class Boots : Item
 
         if (!_pauseMenu.gameIsPaused)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
             {
                 _abilityKeyPressed = true;
             }
 
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Mouse1))
             {
                 _abilityKeyPressed = false;
             }
         }
 
-        if(_inventory.energy == 0 || Input.GetKeyUp(KeyCode.Mouse0))
+        if(_inventory.energy == 0 || Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Mouse1))
         {
             _playerParticleSystemEmission.enabled = false;
         }
@@ -62,20 +57,20 @@ public class Boots : Item
     {
         if (isActive && _abilityKeyPressed && _inventory.energy > 0 && _player.canMove)
         {
-            used = true;
-
-            _inventory.UpdateEnergy(-Time.fixedDeltaTime);
-
-            _playerParticleSystemEmission.enabled = true;
-            _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
-
-            Debug.Log($"Habilidad de {itemName} en uso. Gastando energía...");
+            UseAbility();
         }
     }
 
     protected override void UseAbility()
     {
-        
+        used = true;
+
+        _inventory.UpdateEnergy(-Time.fixedDeltaTime);
+
+        _playerParticleSystemEmission.enabled = true;
+        _playerRigidBody.AddForce(_playerRigidBody.transform.up * _thrustForce, ForceMode2D.Impulse);
+
+        Debug.Log($"Habilidad de {itemName} en uso. Gastando energía...");
     }
 
     public override void ItemBought(bool state)
