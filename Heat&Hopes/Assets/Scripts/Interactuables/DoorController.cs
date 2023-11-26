@@ -7,6 +7,7 @@ public class DoorController : MoneyActivable //Hereda de MoneyActivable
 {
     private Animator animator; //Por si se usa una animación;
     public float timeToDestroy; //Por si se quiere hacer una animación de apertura de puerta
+    public AudioSource openSound;
     [SerializeField] private TextMeshPro priceText;
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class DoorController : MoneyActivable //Hereda de MoneyActivable
         if (animator != null)
         {
             animator.SetTrigger("Open"); //Si hay una animación de abrir, se tiene que iniciar con un trigger llamado Open
+            openSound.Play();
         }
         Destroy(gameObject,timeToDestroy);
     }

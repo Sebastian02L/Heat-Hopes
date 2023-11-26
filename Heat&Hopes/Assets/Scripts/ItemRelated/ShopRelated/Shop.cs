@@ -16,7 +16,7 @@ public class Shop : MonoBehaviour
     private PauseMenu pauseMenu; //Menú de pausa
     private bool onShopRange = false; //Booleano que indica si el jugador se encuentra al lado del punto de acceso a la tienda para poder acceder a ella
     public bool confirmationEnabled;
-
+    public AudioSource enterOutSound;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +52,7 @@ public class Shop : MonoBehaviour
 
     public void ToggleAccessShop() //Función que alterna la tienda: si el menú de la tienda está cerrado lo abre y si está abierto lo cierra
     {
+        enterOutSound.Play();
         //Hay que parar el movimiento del jugador cuando se tenga ya su script
         if (advisoryText.activeSelf) advisoryText.SetActive(false);
         shop.SetActive(!shop.activeSelf);

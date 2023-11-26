@@ -36882,7 +36882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1560121636
 Transform:
   m_ObjectHideFlags: 0
@@ -40386,6 +40386,10 @@ PrefabInstance:
     - target: {fileID: 3196387948073820991, guid: 050fa48aed285214a82ce449f2f2df81, type: 3}
       propertyPath: m_Name
       value: FlagCheckpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358603449808073424, guid: 050fa48aed285214a82ce449f2f2df81, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8925958173974017441, guid: 050fa48aed285214a82ce449f2f2df81, type: 3}
       propertyPath: m_RootOrder
@@ -46488,6 +46492,14 @@ PrefabInstance:
     - target: {fileID: 4671748446413796683, guid: 410a4d120405ed14a877b2fc572b4f84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926748002246590100, guid: 410a4d120405ed14a877b2fc572b4f84, type: 3}
+      propertyPath: Priority
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926748002246590100, guid: 410a4d120405ed14a877b2fc572b4f84, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

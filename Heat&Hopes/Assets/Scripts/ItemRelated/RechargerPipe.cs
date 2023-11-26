@@ -6,6 +6,7 @@ public class RechargerPipe : MonoBehaviour
 {
     private PlayerInventoryManager _inventoryManager;
 
+    public AudioSource rechargeSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,16 @@ public class RechargerPipe : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            playAudio();
             Debug.Log("Recharging energy...");
             _inventoryManager.UpdateEnergy(Time.fixedDeltaTime);
+        }
+    }
+
+    public void playAudio()
+    {
+        if (!rechargeSound.isPlaying){
+            rechargeSound.Play();
         }
     }
 }

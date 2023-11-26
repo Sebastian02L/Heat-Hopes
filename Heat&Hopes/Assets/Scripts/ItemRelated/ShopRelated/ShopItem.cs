@@ -24,6 +24,8 @@ public class ShopItem : MonoBehaviour
     private bool canBeBought = true; //Indica si un ítem se puede comprar o no
     
     private static Item itemToBuy; //Guarda el ítem que se ha seleccionado en la tienda para el botón de confirmación
+
+    public AudioSource buySound;
     
 
 
@@ -118,6 +120,7 @@ public class ShopItem : MonoBehaviour
         playerInventory.AddItem(itemToBuy);
         playerInventory.AddMoney(-itemToBuy.cost);
         advisoryText.text = $"{itemToBuy.itemName} añadido al inventario con éxito.";
+        buySound.Play();
         StartCoroutine(ShowAdvisoryText());
     }
 
