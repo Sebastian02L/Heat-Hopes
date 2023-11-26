@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("jumping", true);
         }
+
+        if (!canMove)
+        {
+            animator.SetBool("walking", false);
+        }
     }
 
     private void MovementInput() //Esta funcion maneja el movimiento dependiendo de la tecla pulsada
