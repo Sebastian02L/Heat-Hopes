@@ -8,6 +8,7 @@ public class MoneyActivable : MonoBehaviour
     public GameObject notEnoughtMoneyIndicator; //Indicador de que el jugador no puede activarlo por falta de dinero
     public float notEnoughtMoneyShowTime; //Tiempo que se mostrará el indicador de falta de dinero
     public GameObject useConfirmation; //Si se necesita confirmación para usar se mostrará esto (si no requiere confirmación dejar vacío)
+    private PauseMenu pauseMenu;
     protected PlayerInventoryManager moneyManager;
     public bool onRange;
     public bool confirming;
@@ -18,6 +19,7 @@ public class MoneyActivable : MonoBehaviour
     protected void MoneyStart() //Este Start tiene que llamarlo el script hijo
     {
         moneyManager = GameObject.Find("Player").GetComponentInChildren<PlayerInventoryManager>(); //Referencia al dinero del jugador
+        pauseMenu = GameObject.Find("GUI").GetComponent<PauseMenu>();
         if (onRangeIndicator != null)
         {
             onRangeIndicator.SetActive(false);
@@ -46,7 +48,7 @@ public class MoneyActivable : MonoBehaviour
             if (moneyManager.money>=price)
             {
 
-                if (useConfirmation == null) //Si no necesita confirmación se usa directamente
+                if (!pauseMenu.confirmationEnabled) //Si no necesita confirmación se usa directamente
                 {
                     Use();
                 }

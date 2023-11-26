@@ -191,6 +191,14 @@ MonoBehaviour:
     m_Localized: Volver
     m_Metadata:
       m_Items: []
+  - m_Id: 4796018867580928
+    m_Localized: "Confirmaci\xF3n de acciones activada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4796165936656384
+    m_Localized: "Confirmaci\xF3n de acciones desactivada"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

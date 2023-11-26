@@ -8,6 +8,7 @@ public class DoorController : MoneyActivable //Hereda de MoneyActivable
     private Animator animator; //Por si se usa una animación;
     public float timeToDestroy; //Por si se quiere hacer una animación de apertura de puerta
     [SerializeField] private TextMeshPro priceText;
+
     // Start is called before the first frame update
     void Start()
     {

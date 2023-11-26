@@ -5,7 +5,6 @@ using UnityEngine;
 public class RechargerPipe : MonoBehaviour
 {
     private PlayerInventoryManager _inventoryManager;
-    public bool recharging = false;
 
     // Start is called before the first frame update
     void Start()
@@ -13,21 +12,12 @@ public class RechargerPipe : MonoBehaviour
         _inventoryManager = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerInventoryManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Entering collision pipe area...");
-            recharging = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            Debug.Log("Leaving collision pipe area...");
-            recharging = false;
+            Debug.Log("Recharging energy...");
+            _inventoryManager.UpdateEnergy(Time.fixedDeltaTime);
         }
     }
 }

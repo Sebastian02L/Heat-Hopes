@@ -24,7 +24,7 @@ public class Boots : Item
         _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         _inventory = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerInventoryManager>();
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
-        _pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        _pauseMenu = GameObject.Find("GUI").GetComponent<PauseMenu>();
         _playerParticleSystem = GameObject.FindWithTag("Player").GetComponentInChildren<ParticleSystem>();
         _playerParticleSystemEmission = _playerParticleSystem.emission;
     }

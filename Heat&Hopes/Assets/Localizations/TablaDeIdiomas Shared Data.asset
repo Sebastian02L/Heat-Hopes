@@ -181,6 +181,14 @@ MonoBehaviour:
     m_Key: Dyslexia_Volver
     m_Metadata:
       m_Items: []
+  - m_Id: 4796018867580928
+    m_Key: "Confirmaci\xF3n_Bot\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4796165936656384
+    m_Key: "Confirmaci\xF3n_Bot\xF3n2"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
