@@ -25,6 +25,9 @@ public class Behaviour : MonoBehaviour
     //Atributos para atacar al jugador:
     public bool attacking;
 
+    //Atributos para hacer sonidos
+    public AudioSource playerDetected;
+
    private void Start() { 
         sprite=transform.GetComponent<SpriteRenderer>();    
     }
@@ -40,6 +43,12 @@ public class Behaviour : MonoBehaviour
     {
         if (Mathf.Abs(transform.position.x - target.transform.position.x) > visionRange)
         { //Si no ve al jugador.
+
+            //Si el audio se estaba reproduciendo
+            if (playerDetected.isPlaying)
+            {
+                playerDetected.Stop();
+            }
 
             //Movimiento del enemigo.
             if (isRight == true)
@@ -67,6 +76,12 @@ public class Behaviour : MonoBehaviour
         else {
             if (Mathf.Abs(transform.position.x - target.transform.position.x) > attackRange)
             { //Si ha visto al jugador pero no esta en rango de ataque entonces se debe acercar
+
+                //Reproduce el audio si no está sonando
+                if (!playerDetected.isPlaying)
+                {
+                    playerDetected.Play();
+                }
 
                 if (transform.position.x < target.transform.position.x)
                 { //El jugador se encuentra a la derecha
