@@ -11,18 +11,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 706208f93d1327443a1c942383c97dc6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/Carlos' Testing Scene.unity
     guid: 16ed00a52365a94478f5a8ed1c69da35
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/Game.unity
     guid: 1b36ff403797c5a4f9b18dd4a2d4be93
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/Dyslexia Test.unity
     guid: 0a473511b3188484591a7ec7e92de774
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 5a051823547ce2a4e88a9c56b9fbc106
+  - enabled: 1
+    path: Assets/Scenes/Credits Scene.unity
+    guid: e84e2e3327b260c488a7730468d7b901
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 2a99831340b77b8448864d46f77e0e61, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 228c8d0f1758e8b45ac198da36bee9e9, type: 2}

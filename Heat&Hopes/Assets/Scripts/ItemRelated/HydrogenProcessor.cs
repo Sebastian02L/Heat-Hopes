@@ -36,4 +36,10 @@ public class HydrogenProcessor : Item
     {
         acquired = state;
     }
+
+    public override void ChangeItemStatus()
+    {
+        used = false;
+        acquired = false;
+    }
 }

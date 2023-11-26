@@ -67,4 +67,10 @@ public class Belt : Item
         }
         else StartCoroutine(FlipCharacter());
     }
+
+    public override void ChangeItemStatus()
+    {
+        used = false;
+        acquired = false;
+    }
 }

@@ -82,4 +82,10 @@ public class Boots : Item
     {
         acquired = state;
     }
+
+    public override void ChangeItemStatus()
+    {
+        used = false;
+        acquired = false;
+    }
 }

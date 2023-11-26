@@ -27,6 +27,7 @@ public class Item : MonoBehaviour
 
     virtual public void ItemBought(bool state) { }
 
+    virtual public void ChangeItemStatus() {}
 
     protected void CheckLanguage()
     {
