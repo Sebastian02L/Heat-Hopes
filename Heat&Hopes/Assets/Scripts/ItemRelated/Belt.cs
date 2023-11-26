@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Icons;
+using UnityEngine.Localization.Settings;
 
 public class Belt : Item
 {
@@ -14,6 +16,10 @@ public class Belt : Item
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         inventory = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerInventoryManager>();
+        spanishName = "Cinturón gravitatorio";
+        spanishDescription = "Cinturón que altera la dirección en la que la gravedad afecta en un área relativamente grande.";
+        englishName = "Gravity belt";
+        englishDescription = "A belt that reverses gravity's direction over a relatively big area.";
     }
 
     private void Update()
@@ -24,6 +30,7 @@ public class Belt : Item
         {
             UseAbility();
         }
+        CheckLanguage();
     }
 
     protected override void UseAbility()

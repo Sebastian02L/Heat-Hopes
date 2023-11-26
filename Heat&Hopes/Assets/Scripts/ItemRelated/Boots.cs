@@ -27,6 +27,10 @@ public class Boots : Item
         _pauseMenu = GameObject.Find("GUI").GetComponent<PauseMenu>();
         _playerParticleSystem = GameObject.FindWithTag("Player").GetComponentInChildren<ParticleSystem>();
         _playerParticleSystemEmission = _playerParticleSystem.emission;
+        spanishName = "Botas propulsadas";
+        spanishDescription = "Unas botas con las que se puede saltar más alto a cambio de un poco de hidrógeno verde sin procesar.";
+        englishName = "Powered boots";
+        englishDescription = "A pair of boots that allow the user to jump higher using fuel.";
     }
     
     private void Update()
@@ -51,6 +55,7 @@ public class Boots : Item
         {
             _playerParticleSystemEmission.enabled = false;
         }
+        CheckLanguage();
     }
 
     private void FixedUpdate()

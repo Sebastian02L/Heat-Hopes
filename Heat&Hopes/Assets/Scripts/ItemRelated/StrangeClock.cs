@@ -7,6 +7,14 @@ public class StrangeClock : Item
     private static bool used = false;
     private static bool acquired = false;
 
+    private void Awake()
+    {
+        spanishName = "Reloj misterioso";
+        spanishDescription = "Un misterioso reloj. ¿Para qué servirá?";
+        englishName = "Uncanny clock";
+        englishDescription = "A strange clock. What will it be used for?";
+    }
+
     private void Update()
     {
         hasBeenUsed = used;
@@ -15,6 +23,7 @@ public class StrangeClock : Item
         {
             //UseAbility();
         }
+        CheckLanguage();
     }
 
     protected override void UseAbility()

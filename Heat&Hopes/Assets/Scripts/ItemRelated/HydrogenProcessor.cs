@@ -7,6 +7,14 @@ public class HydrogenProcessor : Item
     private static bool used = false;
     private static bool acquired = false;
 
+    private void Awake()
+    {
+        spanishName = "Procesador de hidrógeno";
+        spanishDescription = "Mientras está activo convierte lentamente hidrógeno sin procesar en hidrógeno procesado.";
+        englishName = "HydrogenProcessor";
+        englishDescription = "Will convert raw hydrogen to processed hydrogen while active.";
+    }
+
     private void Update()
     {
         hasBeenUsed = used;
@@ -15,6 +23,7 @@ public class HydrogenProcessor : Item
         {
             //UseAbility();
         }
+        CheckLanguage();
     }
 
     protected override void UseAbility()

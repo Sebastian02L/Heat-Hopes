@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.Localization.Settings;
 
 public class ShopItem : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class ShopItem : MonoBehaviour
     private string costInfo; //Cadena que se muestra la información de compra del objeto
     private TextMeshProUGUI buttonString; //Texto del botón
     private bool canBeBought = true; //Indica si un ítem se puede comprar o no
-    
+    private string language;
     private static Item itemToBuy; //Guarda el ítem que se ha seleccionado en la tienda para el botón de confirmación
 
     public AudioSource buySound;
@@ -48,16 +49,19 @@ public class ShopItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        language = LocalizationSettings.SelectedLocale.LocaleName;
         if (item.bought && !item.hasBeenUsed) //El jugador posee el ítem y lo puede vender
         {
             button.image.color = new Color(1.0f, 1.0f, 0.64f, 1.0f);
-            buttonString.text = $"Vender - {item.cost}";
+            if(language == "Spanish (es)") buttonString.text = $"Vender - {item.cost}";
+            else buttonString.text = $"Sell - {item.cost}";
             canBeBought = false;
         }
         else if(item.bought && item.hasBeenUsed) //El jugador posee el ítem y no lo puede vender
         {
             button.image.color = new Color(0.4f, 0.4f, 0.4f, 0.5f);
-            buttonString.text = "Obtenido";
+            if (language == "Spanish (es)") buttonString.text = "Obtenido";
+            else buttonString.text = "Obtained";
             canBeBought = false;
         }
         else if (playerInventory.money < item.cost) //El jugador no posee el ítem y no lo puede comprar
@@ -72,6 +76,9 @@ public class ShopItem : MonoBehaviour
             buttonString.text = costInfo;
             canBeBought = true;
         }
+
+        nameText.text = item.itemName;
+        descriptionText.text = item.description;
     }
 
     public void BuyItem() //Función llamada cuando se pulsa un objeto de la tienda
@@ -84,7 +91,8 @@ public class ShopItem : MonoBehaviour
             if (confirmation) //Si las confirmaciones están activadas se pregunta al jugador si realmente lo quiere comprar
             {
                 shop.ToggleEnableAccess(); //Mientras esté desplegado el menú de confirmación la tienda no se puede abrir la tienda de nuevo para evitar bugs
-                confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea comprar '{itemToBuy.itemName}'? Podrá devolverlo si no lo usa.";
+                if (language == "Spanish (es)") confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea comprar '{itemToBuy.itemName}'? Podrá devolverlo si no lo usa.";
+                else confirmMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"Are you sure that you want to buy '{itemToBuy.itemName}'? You can return it if you don't use it.";
                 shopMenu.SetActive(false);
                 confirmMenu.SetActive(true);
             }
@@ -98,7 +106,8 @@ public class ShopItem : MonoBehaviour
             if (confirmation) //Si las confirmaciones están activadas se pregunta al jugador si realmente lo quiere devolver
             {
                 shop.ToggleEnableAccess();
-                returnMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea devolver '{itemToBuy.itemName}'?";
+                if (language == "Spanish (es)") returnMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"¿Seguro que desea devolver '{itemToBuy.itemName}'?";
+                else returnMenu.GetComponentInChildren<TextMeshProUGUI>().text = $"Are you sure that you want to return '{itemToBuy.itemName}'?";
                 shopMenu.SetActive(false);
                 returnMenu.SetActive(true);
             }
